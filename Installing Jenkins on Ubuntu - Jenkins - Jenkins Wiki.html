@@ -1,0 +1,2721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0072)https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki</title>
+    
+        
+
+                        
+    
+                        
+    
+    
+            <!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta name="ajs-context-path" content="">
+<meta name="ajs-build-number" content="2037">
+<meta id="atlassian-token" name="atlassian-token" content="aa963de51ced40e160cefba7d40e8041ee5a359a">
+<meta id="confluence-space-key" name="confluence-space-key" content="JENKINS">
+<meta name="ajs-remote-user" content="ircbot">
+<meta name="ajs-static-resource-url-prefix" content="/s/2037/5/_">
+
+<script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+</script>
+
+    
+
+<!-- include system css resources -->
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/batch.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/2037/5/2/_/download/superbatch/css/batch.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/batch(1).css" media="print">
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/confluence.web.resources-view-comment.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/2037/5/1.0/_/download/batch/confluence.web.resources:view-comment/confluence.web.resources:view-comment.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/confluence.macros.advanced-fancy-box.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.plugins.drag-and-drop-support.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/confluence-forms.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/2037/5/1.0/_/download/batch/confluence.web.resources:aui-forms/confluence.web.resources:aui-forms.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module-shortcuts.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.keyboardshortcuts-confluence-keyboard-shortcuts.css" media="all">
+
+<!-- end system css resources -->
+
+    <link rel="stylesheet" href="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/combined.css" type="text/css">
+
+    <meta name="confluence-request-time" content="1490531609953">
+
+<meta name="loggedInUsername" content="ircbot">
+            <meta name="ajs-keyboardshortcut-hash" content="fecae178bcc105c8d2ff8d4279018eb">
+    <!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+    
+    <link rel="shortcut icon" href="https://wiki.jenkins-ci.org/favicon.ico">
+    <link rel="icon" type="image/png" href="https://wiki.jenkins-ci.org/s/2037/5/_/images/logo/confluence_16.png">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.jenkins-ci.org/opensearch/osd.action" title="Jenkins Wiki">
+
+        <!-- include system javascript resources -->
+                        
+    
+    <script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/batch.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/confluence.macros.advanced-fancy-box.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/confluence.macros.advanced-thumbnail-images.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.plugins.drag-and-drop-support.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.plugins.drag-and-drop-drag-and-drop-for-view-content.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.plugins.doctheme-splitter.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module-shortcuts.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/com.atlassian.confluence.keyboardshortcuts-confluence-keyboard-shortcuts.js"></script>
+<script type="text/javascript" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/legacy.confluence.web.resources-prototype.js"></script>
+
+    
+    <!-- end system javascript resources -->
+
+    
+
+    
+    <link rel="canonical" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">
+    <link rel="shortlink" href="https://wiki.jenkins-ci.org/x/NwNAAg">
+    <meta name="wikilink" content="[JENKINS:Installing Jenkins on Ubuntu]">
+
+</head>
+    
+<body onload="placeFocus()" id="com-atlassian-confluence" class="theme-default ">
+<ul id="assistive-skip-links" class="assistive">
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#title-heading">Skip to content</a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#breadcrumbs">Skip to breadcrumbs</a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#header-menu-bar">Skip to header menu</a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#navigation">Skip to action menu</a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#quick-search-query">Skip to quick search</a></li>
+</ul>
+<div id="page">
+<div id="full-height-container">
+
+
+
+<fieldset class="hidden parameters">
+    <input type="hidden" id="globalSettingsAttachmentMaxSize" value="10485760">
+    <input type="hidden" id="userLocale" value="en_GB">
+    <input type="hidden" id="staticResourceUrlPrefix" value="/s/2037/5/_">
+    <input type="hidden" id="contextPath" value="">
+</fieldset>
+
+    
+<div id="header" class="">
+        <form id="quick-search" class="quick-search" method="get" action="https://wiki.jenkins-ci.org/dosearchsite.action">
+        <fieldset>
+            <legend>Quick Search</legend>
+            <input class="quick-search-query" id="quick-search-query" type="search" accesskey="q" autocomplete="off" name="queryString" size="25" results="10" placeholder="Search" title=" ( Type &#39;/&#39; )">
+            <input class="quick-search-submit" id="quick-search-submit" type="submit" value="Search">
+            <div class="aui-dd-parent quick-nav-drop-down"><!-- Quick nav appears here --></div>
+        </fieldset>
+        <fieldset class="hidden parameters">
+            <input type="hidden" id="quickNavEnabled" value="true">
+                    </fieldset>
+    </form>
+    <ul id="header-menu-bar" class="ajs-menu-bar">
+                    
+        
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#"><span><span>Browse</span></span></a>         <div class="ajs-drop-down assistive" hidden="">
+                        <ul id="browse-menu-link-leading" class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a id="space-pages-link" href="https://wiki.jenkins-ci.org/pages/listpages.action?key=JENKINS" class="" title="Browse pages in the Jenkins space ( Type &#39;g&#39; then &#39;s&#39; )">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-blogposts-link" href="https://wiki.jenkins-ci.org/pages/viewrecentblogposts.action?key=JENKINS" class="" title="Browse blogs in the Jenkins space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-labels-link" href="https://wiki.jenkins-ci.org/labels/listlabels-heatmap.action?key=JENKINS" class="" title="Browse labels in the Jenkins space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-attachments-link" href="https://wiki.jenkins-ci.org/spaces/listattachmentsforspace.action?key=JENKINS" class="" title="Browse attachments in the Jenkins space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-mail-link" href="https://wiki.jenkins-ci.org/spaces/viewmailarchive.action?key=JENKINS" class="" title="Browse mail in the Jenkins space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-advanced-link" href="https://wiki.jenkins-ci.org/spaces/viewspacesummary.action?key=JENKINS" class="" title="Browse additional space functions in the Jenkins space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-global" class="section-global">
+                                        <li>
+    
+        
+    
+    <a id="people-directory-link" href="https://wiki.jenkins-ci.org/peopledirectory.action" class="" title="Browse the Confluence people directory">
+                   <span>People Directory</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="keyboard-shortcuts-link" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="" title="View available keyboard shortcuts ( Type &#39;?&#39; )">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="gadget-directory-link" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="user-item administration-link" title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+        
+                                                                
+            <li class="normal ajs-menu-item">
+        <a id="user-menu-link" style="display:none" class="user trigger ajs-menu-title" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#"><span><span>IRCbot Run by Kohsuke</span></span></a>         <div class="ajs-drop-down assistive" hidden="">
+                        <ul id="user-menu-link-user-preferences" class="section-user-preferences first">
+                                        <li>
+        
+        
+    
+    <a id="view-user-history-link" href="https://wiki.jenkins-ci.org/users/viewuserhistory.action" class="user-item user-history popup-link" title="">
+                   <span>Recently Viewed</span></a>        </li>
+                            </ul>
+                        <ul id="user-menu-link-user-content" class="section-user-content">
+                                        <li>
+    
+        
+    
+    <a id="view-user-profile-link" href="https://wiki.jenkins-ci.org/users/viewmyprofile.action" class="user-item user-profile" title="">
+                   <span>Profile</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a href="https://wiki.jenkins-ci.org/users/viewfollow.action?username=ircbot" class="follow-link" title="">
+                   <span>Network</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="user-labels-link" href="https://wiki.jenkins-ci.org/users/viewmylabels.action" class="user-item" title="">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="user-watches-link" href="https://wiki.jenkins-ci.org/users/viewnotifications.action" class="user-item" title="">
+                   <span>Watches</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="user-drafts-link" href="https://wiki.jenkins-ci.org/users/viewmydrafts.action" class="user-item" title="">
+                   <span>Drafts</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="user-settings-link" href="https://wiki.jenkins-ci.org/users/viewmysettings.action" class="user-item" title="">
+                   <span>Settings</span></a>        </li>
+                            </ul>
+                        <ul id="user-menu-link-user-operations" class="section-user-operations">
+                                        <li>
+    
+        
+    
+    <a id="logout-link" href="https://wiki.jenkins-ci.org/logout.action" class="user-item logout-link" title="">
+                   <span>Log Out</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                    </ul>
+    
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="https://wiki.jenkins-ci.org/dashboard.action" title="Go to Dashboard ( Type &#39;g&#39; then &#39;d&#39; )">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://wiki.jenkins-ci.org/display/JENKINS">Jenkins</a></span>
+                </li>
+                                        <li id="ellipsis" title="    …
+                    Home
+        …
+"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="https://wiki.jenkins-ci.org/display/JENKINS/Home">Home</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins">Use Jenkins</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span>Installing Jenkins on Ubuntu</span>
+                </li>
+        </ol>
+
+</div><!-- \#header -->
+
+
+
+<div id="main">
+    
+    
+    <div id="navigation" class="content-navigation view">
+        <fieldset class="hidden parameters">
+            <input type="hidden" id="pageId" value="37749559">
+        </fieldset>
+        <ul class="ajs-menu-bar">
+                                <li class="ajs-button normal">
+    
+        
+    
+    <a id="editPageLink" href="https://wiki.jenkins-ci.org/pages/editpage.action?pageId=37749559" class="edit" accesskey="e" title="Edit ( Type &#39;e&#39; )">
+                   <span><u>E</u>dit</span></a>        </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="add-menu-link" class="add trigger ajs-menu-title" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#"><span><span>Add</span></span></a>         <div class="ajs-drop-down assistive" hidden="">
+                        <ul id="add-menu-link-space" class="section-space first">
+                                        <li>
+    
+        
+    
+    <a id="createPageLink" href="https://wiki.jenkins-ci.org/pages/createpage.action?spaceKey=JENKINS&amp;fromPageId=37749559" class="add-page" accesskey="p" title="Add a Page ( Type &#39;c&#39; )">
+                   <span>Page</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a href="https://wiki.jenkins-ci.org/plugins/gliffy/showgliffyeditor.action?pageId=37749559&amp;key=JENKINS&amp;ceoid=37749559&amp;lastPage=/display/JENKINS/Installing+Jenkins+on+Ubuntu" class="" title="">
+                    <span>
+                <img alt="Gliffy Diagram" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/add_diagram_16.gif" height="16" width="16" title="Gliffy Diagram">
+                Gliffy Diagram
+            </span></a>        </li>
+                            </ul>
+                        <ul id="add-menu-link-page" class="section-page">
+                                        <li>
+    
+        
+    
+    <a id="add-comment-menu-link" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?showComments=true&amp;showCommentArea=true#addcomment" class="add-comment" title="Add a Comment ( Type &#39;m&#39; )">
+                   <span>Comment</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="add-attachment-link" href="https://wiki.jenkins-ci.org/pages/viewpageattachments.action?pageId=37749559" class="add-attachment" accesskey="a" title="">
+                   <span>Attachment</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#"><span><span>Tools</span></span></a>         <div class="ajs-drop-down most-right-menu-item assistive" hidden="">
+                        <ul id="action-menu-link-primary" class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a id="view-attachments-link" href="https://wiki.jenkins-ci.org/pages/viewpageattachments.action?pageId=37749559" class="action-view-attachments" accesskey="a" title="View Attachments ( Type &#39;t&#39; )">
+                   <span><u>A</u>ttachments (0)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-history-link" href="https://wiki.jenkins-ci.org/pages/viewpreviousversions.action?pageId=37749559" class="action-view-history" title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-page-permissions-link" href="https://wiki.jenkins-ci.org/pages/viewinfo.action?pageId=37749559" class="action-page-permissions" title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="edit-in-word" href="https://wiki.jenkins-ci.org/plugins/servlet/confluence/editinword/37749559/content/Installing%20Jenkins%20on%20Ubuntu.doc" class="" title="">
+                    <span>
+                <img alt="Edit in Word" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/editinwordblue.png" height="16" width="16" title="Edit in Word">
+                Edit in Word
+            </span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-marker" class="section-marker">
+                                        <li>
+    
+        
+    
+    <a id="page-favourite" href="https://wiki.jenkins-ci.org/labels/addfavourite.action?entityId=37749559&amp;atl_token=aa963de51ced40e160cefba7d40e8041ee5a359a" class="action-page-favourite" title="">
+                   <span>Favourite</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="page-watch" href="https://wiki.jenkins-ci.org/pages/addpagenotification.action?pageId=37749559&amp;atl_token=aa963de51ced40e160cefba7d40e8041ee5a359a" class="action-page-watching" title="">
+                   <span>Watch</span></a>        </li>
+                                        <li class="assistive">
+    
+        
+    
+    <a id="page-unwatch" href="https://wiki.jenkins-ci.org/pages/removepagenotification.action?pageId=37749559&amp;atl_token=aa963de51ced40e160cefba7d40e8041ee5a359a" class="action-page-watching selected ie-page-watching-selected inactive" title="">
+                   <span>Stop Watching</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-secondary" class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a id="view-page-info-link" href="https://wiki.jenkins-ci.org/pages/viewinfo.action?pageId=37749559" class="action-view-info" title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="link-to-page-link" href="https://wiki.jenkins-ci.org/pages/viewinfo.action?pageId=37749559" class="" title="Link to this Page ( Type &#39;k&#39; )">
+                   <span>Link to this Page…</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="view-in-hierarchy-link" href="https://wiki.jenkins-ci.org/pages/listpages-dirview.action?key=JENKINS&amp;openId=37749559#selectedPageInHierarchy" class="" title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-source-link" href="https://wiki.jenkins-ci.org/pages/viewpagesrc.action?pageId=37749559" class="action-view-source popup-link" title="">
+                   <span>View Wiki Markup</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-export-pdf-link" href="https://wiki.jenkins-ci.org/spaces/flyingpdf/pdfpageexport.action?pageId=37749559" class="" title="">
+                   <span>Export to PDF</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-export-word-link" href="https://wiki.jenkins-ci.org/exportword?pageId=37749559" class="action-export-word" title="">
+                   <span>Export to Word</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="import-word-doc" href="https://wiki.jenkins-ci.org/pages/worddav/uploadimport.action?pageId=37749559" class="" title="">
+                   <span>Import Word Document</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-modify" class="section-modify">
+                                        <li>
+    
+        
+    
+    <a id="action-copy-page-link" href="https://wiki.jenkins-ci.org/pages/copypage.action?idOfPageToCopy=37749559&amp;spaceKey=JENKINS" class="action-copy" title="">
+                   <span>Copy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-move-page-dialog-link" href="https://wiki.jenkins-ci.org/pages/viewpage.action?pageId=37749559" class="action-move" title="">
+                   <span>Move</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+    
+    <h1 id="title-heading" class="pagetitle">
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS"><img class="logo space custom" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/JENKINS" alt=""></a>        
+		<span id="title-text">
+					            <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu">Installing Jenkins on Ubuntu</a>
+    				</span>
+    </h1>
+
+    
+
+                        
+    <div id="content" class="page view">
+    
+
+
+
+<fieldset id="link-to-page-fields" class="hidden parameters">
+    <input type="hidden" id="linkToThisPageHeading" value="Link to this Page">
+    <input type="hidden" id="linkToThisPageLink" value="Link">
+    <input type="hidden" id="linkToThisPageTinyLink" value="Tiny Link">
+    <input type="hidden" id="linkToThisPageWikiMarkup" value="Wiki Markup">
+    <input type="hidden" id="linkToThisPageClose" value="Close">
+</fieldset>
+<fieldset class="hidden parameters">
+    <input type="hidden" title="movePageDialogViewPageTitle" value="Move Page – ‘Installing Jenkins on Ubuntu’">
+    <input type="hidden" title="movePageDialogEditPageTitle" value="Set Page Location">
+    <input type="hidden" title="movePageDialogMoveButton" value="Move">
+    <input type="hidden" title="movePageDialogOkButton" value="OK">
+    <input type="hidden" title="movePageDialogCancelButton" value="Cancel">
+    <input type="hidden" title="movePageDialogBrowsePanelTip" value="Click to select the new parent page for this page and its children.">
+    <input type="hidden" title="movePageDialogSearchPanel" value="Search">
+    <input type="hidden" title="movePageDialogHistoryPanel" value="Recently Viewed">
+    <input type="hidden" title="movePageDialogHistoryNoResults" value="There were no recently viewed pages found.">
+    <input type="hidden" title="movePageDialogLocationPanel" value="Known Location">
+    <input type="hidden" title="movePageDialogLocationNotFound" value="The specified page was not found.">
+    <input type="hidden" title="movePageDialogBrowsePanel" value="Browse">
+    <input type="hidden" title="movePageDialogPanelLoadErrorMsg" value="Error reading the panel content from the server.">
+    <input type="hidden" title="movePageDialogPanelLoadErrorTip" value="You could try reloading the page and launching the dialog again.">
+    <input type="hidden" title="movePageDialogPanelLoadErrorStatus" value="HTTP Status">
+    <input type="hidden" title="movePageDialogNoSelectionErrorMsg" value="You must make a selection in the tree before you can move the page.">
+    <input type="hidden" title="movePageDialogSearchError" value="Failed to retrieve search results from the server.">
+    <input type="hidden" title="movePageDialogSearchNoResults" value="There were no pages found containing &lt;b&gt;{0}&lt;/b&gt;.">
+    <input type="hidden" title="movePageDialogSearchResultCount" value="Showing &lt;b&gt;{0}&lt;/b&gt;-&lt;b&gt;{1}&lt;/b&gt; of &lt;b&gt;{2}&lt;/b&gt; pages containing &lt;b&gt;{3}&lt;/b&gt;.">
+    <input type="hidden" title="movePageDialogMoveFailed" value="Move failed. There was a problem contacting the server.">
+    <input type="hidden" title="movePageDialogCannotChangeSpace" value="You cannot move this page to another space because you do not have permission to remove it from this space.">
+    <input type="hidden" title="pageTitle" value="Installing Jenkins on Ubuntu">
+    <input type="hidden" title="parentPageTitle" value="Use Jenkins">
+    <input type="hidden" title="fromPageTitle" value="">
+    <input type="hidden" title="spaceKey" value="JENKINS">
+    <input type="hidden" title="spaceName" value="Jenkins">
+    <input type="hidden" title="movePageDialogInvalidLocation" value="You cannot move a page to be underneath itself or its children.">
+    <input type="hidden" title="movePageDialogOrderingTitle" value="Page Ordering">
+    <input type="hidden" title="movePageDialogBackButton" value="Back">
+    <input type="hidden" title="movePageDialogMoveAndOrderButton" value="Reorder">
+    <input type="hidden" title="movePageDialogNextButton" value="Move">
+</fieldset>
+
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+            
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="JENKINS">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="Jenkins" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="Use Jenkins">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="movePageErrors">
+    <div id="move-errors" class="hidden warning"></div>
+</script>
+<script type="text/x-template" title="movePageBreadcrumb">
+    <li><a class="{2}" title="{3}" tabindex="-1"><span>{0}</span></a></li>
+</script>
+<script type="text/x-template" title="movePageBreadcrumbLoading">
+    <li class="loading"><span>Loading breadcrumbs&hellip;</span></li>
+</script>
+<script type="text/x-template" title="movePageBreadcrumbError">
+    <li class="warning last"><span>Error retrieving breadcrumbs.</span></li>
+</script>
+<script type="text/x-template" title="movePageNoMatchingPages">
+    <ol><li><span class="warning">No matching pages found.</span></li></ol>
+</script>
+<script type="text/x-template" title="movePageNoMatchingSpaces">
+    <ol><li><span class="warning">No matching spaces found.</span></li></ol>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="JENKINS" selected="selected">Jenkins</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="movePageSearchResultsLoading">
+    <div class="searching">Searching…</div>
+</script>
+
+<script type="text/x-template" title="movePageHistoryPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Select the new parent page for this page and its children from your history.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="movePageHistoryLoading">
+    <div class="searching">Loading…</div>
+</script>
+<script type="text/x-template" title="movePageBrowsePanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Click to select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div class="tree"></div>
+</script>
+<script type="text/x-template" title="movePagePanelLoading">
+    <span>Loading…</span>
+</script>
+<script type="text/x-template" title="movePageBrowsePanelSpace">
+    <ul><li id='tree-root-node-item' class='root-node-list-item'><a class='root-node' href='#'>{0}</a></li></ul>
+</script>
+<script type="text/x-template" title="orderingPagePanel">
+<div id="orderingPlaceHolder"></div>
+</script>
+<script type="text/x-template" title="reorderCheckbox">
+<span id="reorderRequirement"><input id="reorderCheck" type="checkbox" name="reorderFlag" title="Choose the position of this page within the list of child pages."/><label for="reorderCheck" title="Choose the position of this page within the list of child pages.">Reorder</label></span>
+</script>
+<script type="text/x-template" title="move-help-link">
+    <div class="dialog-help-link">
+            <a href="http://docs.atlassian.com/confluence/docs-34/Moving+a+Page" target="_blank">Help</a>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script>
+<!-- Start restrictions section -->
+<fieldset class="hidden parameters i18n">
+        <input type="hidden" title="i18n.page.perms.error.invalid.entity.names" value="Unknown user or group:">
+        <input type="hidden" title="i18n.page.perms.dialog.heading" value="Page Restrictions">
+        <input type="hidden" title="i18n.page.perms.editing.restricted.to" value="Editing restricted to:">
+        <input type="hidden" title="i18n.cancel.name" value="Cancel">
+        <input type="hidden" title="i18n.close.name" value="Close">
+        <input type="hidden" title="i18n.update.name" value="Save">
+</fieldset>
+
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                    <span id="page-permissions-choose-me" class="ajs-button normal">
+                        <img class="permission-entity-picture" src="/images/icons/profilepics/default.gif" border="0" alt="Me" align="absmiddle"/>
+                        <a href="#">Me</a>
+                        <span class="remote-user-name hidden">ircbot</span>
+                    </span>
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/spaces/openuserpicker.action?key=JENKINS&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/s/2037/5/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/spaces/openuserpicker.action?key=JENKINS&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=JENKINS&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/s/2037/5/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=JENKINS&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                                <span>
+                    <input type="text" id="page-permissions-names-input" class="input-placeholder" value="Enter user or group name" name="permissionNames" size="30" autocomplete="off"/>
+                </span>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/s/2037/5/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/x-template" title="permissions-row-template">
+    <tr class="permission-row">
+                                
+                <td class="page-permissions-marker-cell" width="20%">
+            <span>Viewing restricted to:</span>
+        </td>
+                <td class="permission-entity" nowrap="true" width="40%">
+            <span class="entity-container">
+                <img class="permission-entity-picture"/>
+                <span class="permission-entity-display-name"></span>
+                <span class="permission-entity-name-wrap">&nbsp;(<span class="permission-entity-name"></span>)</span>
+            </span>
+        </td>
+        <td class="permission-detail-column">
+            <div class="permission-remove-div">
+                <a href="#" class="remove-permission-link">Remove restriction</a>
+            </div>
+        </td>
+    </tr>
+</script>
+<script type="text/x-template" title="permissions-username-no-suggestion-template">
+    <ol>
+        <li><a href="#" class="message"><span>No matches</span></a></li>
+    </ol>
+</script>
+<script type="text/x-template" title="page-inherited-permissions-table-div-template">
+        <div class="page-inherited-permissions-owner-div">
+        <div class="page-inherited-permissions-table-desc">Viewing restrictions apply to “<a></a>”. In order to see “<span></span>”, a user must be in the following list of users and groups:</div>
+        <table class="page-permissions-table"></table>
+    </div>
+</script>
+<script type="text/x-template" title="page-restrictions-help-link">
+    <div class="dialog-help-link">
+            <a href="http://docs.atlassian.com/confluence/docs-34/Page+Restrictions" target="_blank">Help</a>
+    </div>
+</script>
+<!-- End restrictions section -->
+
+<fieldset class="hidden parameters">
+    <input type="hidden" title="spaceKeyEncoded" value="JENKINS">
+    <input type="hidden" title="spaceKeyDecoded" value="JENKINS">
+</fieldset>
+
+
+        
+    
+    
+        
+                            
+    
+
+                    
+
+        
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a id="content-metadata-page-restrictions" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="page-metadata-icon page-restrictions hidden" title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="https://wiki.jenkins-ci.org/display/~kohsuke" class="url fn confluence-userlink userlink-0" data-username="kohsuke" title="" data-user-hover-bound="true">Kohsuke Kawaguchi</a>, last edited by <a href="https://wiki.jenkins-ci.org/display/~inntran" class="url fn confluence-userlink userlink-1" data-username="inntran" title="" data-user-hover-bound="true">Yinchuan Song</a> on Aug 07, 2016
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="https://wiki.jenkins-ci.org/pages/diffpages.action?pageId=37749559&amp;originalId=99910048">view change</a>)</span>
+                                                </li>
+                            <li class="show-hide-comment-link">
+                    <a id="show-version-comment" class="inline-control-link" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#">show comment</a>
+                    <a id="hide-version-comment" class="inline-control-link" style="display:none;" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#">hide comment</a>
+                </li>
+                    </ul>
+          <div id="version-comment" class="noteMacro" style="display: none;">
+      <strong>Comment:</strong>
+      update jenkins repo hostname to pkg.jenkins.io<br>
+  </div>
+    </div>
+
+
+<a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+        
+<script>
+if (Math.random()*7<1) {
+  document.write("<div align='center'><div style='width: 568px; color: #888; text-align:right; font-size:10px'>Message from a Patron of Jenkins</div><iframe src='https://jenkins-infra.github.io/patron/message.html' width=568 height=75 style='border: 1px solid #ccc; overflow:hidden'></iframe></div>");
+}
+</script>
+
+        <fieldset class="hidden parameters">
+                        <input type="hidden" title="browsePageTreeMode" value="view">
+            <input type="hidden" title="parentPageId" value="753702">
+        </fieldset>
+
+
+
+<table><tbody><tr><td style="width:14em" valign="top">
+<div class="navmenu" style="float:left"> 
+  <div id="section-menuheading-spaceops" class="menuheading">Jenkins</div>
+  <ul class="menu-section-list"> 
+    <li><a href="https://jenkins.io/"> 
+      Home
+    </a></li>
+    <li><a href="https://jenkins.io/content/mailing-lists"> 
+      Mailing lists
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Source%20code"> 
+      Source code
+    </a></li>
+    <li><a href="https://issues.jenkins-ci.org/"> 
+      Bugtracker
+    </a></li>
+    <li><a href="https://jenkins.io/security/advisories/"> 
+      Security Advisories
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Events"> 
+      Events
+    </a></li>
+    <li><a href="https://jenkins.io/donate"> 
+      Donation
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Commercial+Support"> 
+      Commercial Support
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/pages/listpages-dirview.action?key=JENKINS"> 
+      Wiki Site Map
+    </a></li>
+  </ul>
+
+
+  <div id="section-menuheading-spaceops" class="menuheading">Documents</div>
+  <ul class="menu-section-list"> 
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins"> 
+      Meet Jenkins
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins"> 
+      Use Jenkins
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Extend+Jenkins"> 
+      Extend Jenkins
+    </a></li>
+    <li><a href="https://plugins.jenkins.io/"> 
+      Plugins
+    </a></li>
+    <li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Containers"> 
+      Servlet Container Notes
+    </a></li>
+  </ul>
+</div>
+</td><td valign="top">
+        <div class="wiki-content">
+           <!-- wiki content -->
+            <p>On Debian-based distributions, such as Ubuntu, you can install Jenkins through <tt>apt-get</tt>.</p>
+
+<p>Recent versions are available in <a href="http://jenkins-ci.org/debian/" class="external-link" rel="nofollow">an apt repository</a>. Older but stable LTS versions are in <a href="http://pkg.jenkins-ci.org/debian-stable/" class="external-link" rel="nofollow">this apt repository</a>.</p>
+
+<p>You need to have a JDK and JRE installed. openjdk-7-jre and openjdk-7-jdk are suggested. As of 2011-08 gcj is known to be problematic - see <a href="https://issues.jenkins-ci.org/browse/JENKINS-743" class="external-link" rel="nofollow">https://issues.jenkins-ci.org/browse/JENKINS-743</a>.</p>
+
+<p>Please make sure to back up any current Hudson or Jenkins files you may have.</p>
+
+<h1><a name="InstallingJenkinsonUbuntu-Installation"></a>Installation</h1>
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+</pre>
+</div></div>
+
+<h1><a name="InstallingJenkinsonUbuntu-Upgrade"></a>Upgrade</h1>
+
+<p>Once installed like this, you can update to the later version of Jenkins (when it comes out) by running the following commands:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>sudo apt-get update
+sudo apt-get install jenkins
+</pre>
+</div></div>
+<p>(aptitude or apt-get doesn't make any difference.)</p>
+
+<h1><a name="InstallingJenkinsonUbuntu-Whatdoesthispackagedo%3F"></a>What does this package do?</h1>
+
+<ul>
+	<li>Jenkins will be launched as a daemon up on start. See <tt>/etc/init.d/jenkins</tt> for more details.</li>
+	<li>The '<tt>jenkins</tt>' user is created to run this service.</li>
+	<li>Log file will be placed in <tt>/var/log/jenkins/jenkins.log</tt>. Check this file if you are troubleshooting Jenkins.</li>
+	<li><tt>/etc/default/jenkins</tt> will capture configuration parameters for the launch like e.g JENKINS_HOME</li>
+	<li>By default, Jenkins listen on port 8080. Access this port with your browser to start configuration.</li>
+</ul>
+
+
+
+<div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/warning.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>If your <tt>/etc/init.d/jenkins</tt> file fails to start jenkins, edit the <tt>/etc/default/jenkins</tt> to replace the line
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>HTTP_PORT=8080</pre>
+</div></div>
+<p> by </p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>HTTP_PORT=8081</pre>
+</div></div>
+<p>Here, 8081 was chosen but you can put another port available.</p></td></tr></tbody></table></div>
+
+<h1><a name="InstallingJenkinsonUbuntu-DeployingonUbuntuinacloud%28EC2%2CHPCloud%2COpenStack%29"></a>Deploying on Ubuntu in a cloud (EC2, HP Cloud, OpenStack)</h1>
+
+<p>The Ubuntu Jenkins maintainer also maintains the <a href="http://jujucharms.com/jenkins" class="external-link" rel="nofollow">Juju charm deployment/management script</a> for deployment in clouds. It's designed to make it easy to deploy a master with multiple slaves:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>juju deploy jenkins
+juju deploy -n 5 jenkins-slave
+juju add-relation jenkins jenkins-slave
+</pre>
+</div></div>
+
+<p>The default password for the 'admin' account will be auto-generated. You can set it using:</p>
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>juju set jenkins password=mypassword
+</pre>
+</div></div>
+
+<p>Always change it this way - this account is used by the charm to manage slave configuration. Then feel free to expose your jenkins master:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>juju expose jenkins
+</pre>
+</div></div>
+
+<h1><a name="InstallingJenkinsonUbuntu-UsingLinuxiptablesforport80%5C%3E8080"></a>Using Linux iptables for port 80 -&gt; 8080</h1>
+
+<ul>
+	<li>This enables port forwarding of traffic between ports 80 and 8080. You can keep Jenkins on the default port 8080 and access it with a normal url without installing anything extra.</li>
+	<li><tt>sudo nano /etc/rc.local</tt></li>
+	<li>Then add the following just <b>before</b> the exit 0</li>
+</ul>
+
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>#Requests from outside
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
+#Requests from localhost
+iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
+</pre>
+</div></div>
+
+<p>Now reboot or run <tt>sudo /etc/rc.local</tt> to enable port forwarding. Additional info:&nbsp;<a href="https://gist.github.com/m5m1th/6870a54717c0387468c3" class="external-link" rel="nofollow">https://gist.github.com/m5m1th/6870a54717c0387468c3</a></p>
+
+<h1><a name="InstallingJenkinsonUbuntu-SettingupanApacheProxyforport80%5C%3E8080"></a>Setting up an Apache Proxy for port 80 -&gt; 8080</h1>
+
+<ul>
+	<li>This configuration will setup Apache2 to proxy port 80 to 8080 so that you can keep Jenkins on 8080.</li>
+	<li><tt>sudo aptitude install apache2</tt></li>
+	<li><tt>sudo a2enmod proxy</tt></li>
+	<li><tt>sudo a2enmod proxy_http</tt></li>
+</ul>
+
+
+<div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/warning.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>do not do this next command if you already have virtual hosting setup that depends on the default site. See my comment below - danapsimer</td></tr></tbody></table></div>
+<ul>
+	<li><tt>sudo a2dissite default</tt></li>
+</ul>
+
+
+<div class="panelMacro"><table class="infoMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>If you get <tt>ERROR: Site default does not exist!</tt> then try this instead:
+<ul>
+	<li><tt>sudo a2dissite 000-default</tt></li>
+</ul>
+
+
+<p>And if all else fails just have a look if there is a default site set up at all:</p>
+<ul>
+	<li><tt>ls  /etc/apache2/sites-enabled/</tt></li>
+</ul>
+</td></tr></tbody></table></div>
+<ul>
+	<li>Create a file called <tt>jenkins.conf</tt> in <tt>/etc/apache2/sites-available</tt></li>
+</ul>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml"><span class="code-tag">&lt;VirtualHost *:80&gt;</span>
+	ServerAdmin webmaster@localhost
+	ServerName ci.company.com
+	ServerAlias ci
+	ProxyRequests Off
+	<span class="code-tag">&lt;Proxy *&gt;</span>
+		Order deny,allow
+		Allow from all
+	<span class="code-tag">&lt;/Proxy&gt;</span>
+	ProxyPreserveHost on
+	ProxyPass / http://localhost:8080/ nocanon
+	AllowEncodedSlashes NoDecode
+<span class="code-tag">&lt;/VirtualHost&gt;</span>
+</pre>
+</div></div>
+
+<ul>
+	<li><tt>sudo a2ensite jenkins</tt></li>
+	<li><tt>sudo apache2ctl restart</tt></li>
+</ul>
+
+
+<h1><a name="InstallingJenkinsonUbuntu-SettingupanNginxProxyforport80%5C%3E8080"></a>Setting up an Nginx Proxy for port 80 -&gt; 8080</h1>
+
+<p>This configuration will setup Nginx to proxy port 80 to 8080 so that you can keep Jenkins on 8080. Instructions originally found in a GitHub Gist from <a href="https://github.com/rdegges" class="external-link" rel="nofollow">rdegges</a>: <a href="https://gist.github.com/913102" class="external-link" rel="nofollow">https://gist.github.com/913102</a></p>
+
+
+
+
+
+<ul>
+	<li><b>Install Nginx</b>.
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">sudo aptitude -y install nginx
+</pre>
+</div></div></li>
+	<li><b>Remove default configuration</b>.
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">cd /etc/nginx/sites-available
+sudo rm <span class="code-keyword">default</span> ../sites-enabled/<span class="code-keyword">default</span>
+</pre>
+</div></div></li>
+	<li><b>Create new configuration for Jenkins</b>. This example uses <tt>cat</tt>, but you can use your favorite text editor. Make sure to replace 'ci.yourcompany.com' with your domain name.<br>
+Note: Sometimes your permissions (umask, etc) might be setup such that this won't work. Create the file somewhere else then copy it into place if you run into that problem.
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">sudo cat &gt; jenkins
+upstream app_server {
+    server 127.0.0.1:8080 fail_timeout=0;
+}
+
+server {
+    listen 80;
+    listen [::]:80 <span class="code-keyword">default</span> ipv6only=on;
+    server_name ci.yourcompany.com;
+
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+
+        <span class="code-keyword">if</span> (!-f $request_filename) {
+            proxy_pass http:<span class="code-comment">//app_server;
+</span>            <span class="code-keyword">break</span>;
+        }
+    }
+}
+^D # Hit CTRL + D to finish writing the file
+</pre>
+</div></div></li>
+</ul>
+
+
+<ul>
+	<li><b>Link your configuration</b> from <tt>sites-available</tt> to <tt>sites-enabled</tt>:
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">sudo ln -s /etc/nginx/sites-available/jenkins /etc/nginx/sites-enabled/
+</pre>
+</div></div></li>
+	<li><b>Restart Nginx</b>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">sudo service nginx restart
+</pre>
+</div></div></li>
+</ul>
+
+
+
+<h1><a name="InstallingJenkinsonUbuntu-Wheretogofromhere%3F"></a>Where to go from here?</h1>
+
+<ul>
+	<li>You might want to <a href="https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache" title="Running Jenkins behind Apache">make Jenkins visible through Apache</a>, to make it available on port 80 (for example, <a href="http://myserver/jenkins/" class="external-link" rel="nofollow">http://myserver/jenkins/</a> instead of <a href="http://myserver:8080/" class="external-link" rel="nofollow">http://myserver:8080/</a>). See <a href="http://www.zzorn.net/2009/11/setting-up-hudson-on-port-80-on-debian.html" class="external-link" rel="nofollow">this blog for more details</a></li>
+	<li>You might want to see latest releases of Jenkins Debian packages. See&nbsp;<a href="http://pkg.jenkins-ci.org/debian-stable/" class="external-link" rel="nofollow">http://pkg.jenkins-ci.org/debian-stable/</a></li>
+</ul>
+        </div>
+</td></tr></tbody></table>
+
+
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/37749559"/>
+</rdf:RDF>
+-->
+
+            
+    
+
+
+<fieldset class="hidden parameters">
+    <legend>Labels parameters</legend>
+    <input type="hidden" id="editLabel" value="Edit">
+    <input type="hidden" id="addLabel" value="Add Labels">
+    <input type="hidden" id="domainName" value="https://wiki.jenkins-ci.org">
+    <input type="hidden" id="pageId" value="37749559">
+    <input type="hidden" id="spaceKey" value="JENKINS">
+</fieldset>
+
+<div id="labels-section" class="pageSection">
+    <div id="default-labels-header" class="section-header">
+        <h2 id="labels-section-title" class="section-title  hidden ">Labels</h2>
+                            <a id="labels-edit" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="show-labels-editor add" title="Add Labels ( Type &#39;l&#39; )">Add Labels</a>
+                <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="hide-labels-editor inline-control-link hidden">
+            Done
+        </a>
+            </div>
+
+    <div class="labels-editor">
+        <div id="labelsList">
+                    </div>
+
+        <span class="errorMessage error" id="errorSpan"></span>
+        <form method="GET" action="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu" id="add-labels-form">
+            <div id="labelInputSpan" class="labels-input">
+                <div id="labelOperationErrorContainer" class="hidden">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+
+                <div class="caption">Enter labels to add to this page:</div>
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="" size="40">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                    <input id="close-labels-editor-button" type="submit" class="hide-labels-editor" value="Done">
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent"></div>
+                <div class="labels-tip">
+                    <div id="suggestedLabelsSpan"></div>
+                    Looking for a label? Just start typing.
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+            
+            
+
+
+
+
+            
+    
+
+        
+<fieldset class="parameters hidden">
+    <input type="hidden" id="deleteCommentConfirmMessage" value="Are you sure you want to remove the comment?">
+    <input type="hidden" id="collapseTooltip" value="Click to toggle the display of this comment.">
+        </fieldset>
+
+<fieldset class="hidden parameters i18n">
+        <input type="hidden" title="i18n.cancel.name" value="Cancel">
+</fieldset>
+
+
+
+
+
+
+<div id="comments-section" class="pageSection">
+    
+            <div class="section-header  collapsed ">
+            <h2 id="comments-section-title" class="section-title">
+                <a name="comments">Comments (23)</a>
+            </h2>
+            &nbsp;
+            <ul id="comment-top-links" class="global-comment-actions">
+                <li id="comment-show-hide">
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?showComments=false#comments" id="comments-hide" class="hidden">Hide Comments</a>
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?showComments=true#comments" id="comments-show">Show Comments</a>
+                </li>
+                <li id="comments-expand-collapse" class="hidden">
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" id="comments-collapse">Collapse All</a>
+                    <span id="collapse-wait" class="hidden">Collapsing…</span>
+                    <span id="expand-wait" class="hidden">Expanding…</span>
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu#" class="hidden" id="comments-expand">Expand All</a>
+                </li>
+                                <li>
+                    <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?showComments=true&amp;showCommentArea=true#addcomment" id="add-comment-top">Add Comment</a>
+                </li>
+                            </ul>
+        </div>
+    
+    
+                            <ol class="comment-threads top-level  hidden " id="page-comments">
+                        <li id="comment-thread-38929444" class="comment-thread">
+                    <div class="comment  " id="comment-38929444">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-2" data-username="japher" href="https://wiki.jenkins-ci.org/display/~japher" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: japher" title="">
+           </a>                </p>
+                <p class="date" title="Sep 15, 2009 11:42">
+                    Sep 15, 2009
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~japher" class="url fn confluence-userlink userlink-2" data-username="japher" title="" data-user-hover-bound="true">japher -</a> says:</h4>
+                                        <span class="excerpt">The above instructions worked for me on Jaunty (9.04) Server, the daemon depende...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>The above instructions worked for me on Jaunty (9.04) Server, the daemon dependency was picked up correctly.</p>
+
+<p>There's a bug in the 1.322 and 1.323 releases of Hudson though that stops the hudson service starting up correctly. See <a href="https://hudson.dev.java.net/issues/show_bug.cgi?id=4304" class="external-link" rel="nofollow">https://hudson.dev.java.net/issues/show_bug.cgi?id=4304</a> (need to edit <em>/etc/init.d/hudson</em> and apply a fix as mentioned in the comments of that bug report). </p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929444#comment-38929444" id="comment-permalink-38929444"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=38929444&amp;pageId=37749559" id="reply-comment-38929444"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929444#comment-38929444"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929444#comment-38929444"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/38929444"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-38929487" class="comment-thread">
+                    <div class="comment   odd" id="comment-38929487">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-3" data-username="benjamin" href="https://wiki.jenkins-ci.org/display/~benjamin" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/me.jpg" alt="User icon: benjamin" title="">
+           </a>                </p>
+                <p class="date" title="Sep 16, 2009 12:21">
+                    Sep 16, 2009
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~benjamin" class="url fn confluence-userlink userlink-3" data-username="benjamin" title="" data-user-hover-bound="true">benjamin dorsett</a> says:</h4>
+                                        <span class="excerpt">On Jaunty (9.04) Server, the daemon dependency is picked up correctly.
+
+But Huds...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>On Jaunty (9.04) Server, the daemon dependency is picked up correctly.</p>
+
+<p>But Hudson doesn't start. Changing hudson user's shell to /bin/bash instead of /bin/false in /etc/passwd seems to fix it.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929487#comment-38929487" id="comment-permalink-38929487"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=38929487&amp;pageId=37749559" id="reply-comment-38929487"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929487#comment-38929487"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929487#comment-38929487"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/38929487"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-38929562" class="comment-thread">
+                    <div class="comment  " id="comment-38929562">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-4" data-username="joansava@gmail.com" href="https://wiki.jenkins-ci.org/display/~joansava@gmail.com" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: joansava@gmail.com" title="">
+           </a>                </p>
+                <p class="date" title="Sep 18, 2009 08:35">
+                    Sep 18, 2009
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~joansava@gmail.com" class="url fn confluence-userlink userlink-4" data-username="joansava@gmail.com" title="" data-user-hover-bound="true">Jose Salvador</a> says:</h4>
+                                        <span class="excerpt">My case:
+
+I work on a Debian Lenny dist (stable)
+
+I have updated the sources lis...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>My case:</p>
+
+<p>I work on a Debian Lenny dist (stable)</p>
+
+<p>I have updated the sources list following the instructions above and have applied the patch attached to the bug</p>
+
+<p>Then, I have had to install the sun-java6-bin package to get working. In my experience the hudson does not start with the debian gnu java. I obtained an exception related to this message:</p>
+
+<p>" Could not instantiate converter : com.thoughtworks.xstream.converters.extended.DurationConverter : null"</p>
+
+<p>Of course, I have changed the symbolic link at /usr/bin/java by one which links directly to the java from sun.</p>
+
+<p>Cheers.<br class="atl-forced-newline"> <br class="atl-forced-newline"></p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929562#comment-38929562" id="comment-permalink-38929562"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=38929562&amp;pageId=37749559" id="reply-comment-38929562"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929562#comment-38929562"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38929562#comment-38929562"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/38929562"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-38930696" class="comment-thread">
+                    <div class="comment   odd" id="comment-38930696">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-5" data-username="aguynamedben" href="https://wiki.jenkins-ci.org/display/~aguynamedben" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: aguynamedben" title="">
+           </a>                </p>
+                <p class="date" title="Sep 24, 2009 15:01">
+                    Sep 24, 2009
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~aguynamedben" class="url fn confluence-userlink userlink-5" data-username="aguynamedben" title="" data-user-hover-bound="true">Ben Standefer</a> says:</h4>
+                                        <span class="excerpt">This fix worked for me when installing Hudson on Debian Lenny: "After installing...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>This fix worked for me when installing Hudson on Debian Lenny: "After installing the hudson deb on Ubuntu server Jaunty 8.10 [Debian Lenny in my case], when I tried to run the init script /etc/init.d/hudson start, nothing would be printed and the server would not start. No log file was created under /var/log/hudson and no pid file was created under /var/run/hudson. I eventually discovered that if i set the hudson user's shell to /bin/bash instead of /bin/false in /etc/passwd everything works fine. Hope this saves someone else some trouble."<br class="atl-forced-newline"></p>
+
+<p>Also, this is a good resource: <a href="http://weblogs.java.net/blog/2008/06/11/debian-packages-hudson" class="external-link" rel="nofollow">http://weblogs.java.net/blog/2008/06/11/debian-packages-hudson</a> </p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38930696#comment-38930696" id="comment-permalink-38930696"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=38930696&amp;pageId=37749559" id="reply-comment-38930696"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38930696#comment-38930696"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=38930696#comment-38930696"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/38930696"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-43713022" class="comment-thread">
+                    <div class="comment  " id="comment-43713022">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-6" data-username="rdesgroppes" href="https://wiki.jenkins-ci.org/display/~rdesgroppes" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: rdesgroppes" title="">
+           </a>                </p>
+                <p class="date" title="Apr 06, 2010 01:57">
+                    Apr 06, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~rdesgroppes" class="url fn confluence-userlink userlink-6" data-username="rdesgroppes" title="" data-user-hover-bound="true">Régis Desgroppes</a> says:</h4>
+                                        <span class="excerpt">Hi,
+Hudson 1.353 was not published in the apt repository. Is there something wro...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Hi,<br>
+Hudson 1.353 was not published in the apt repository. Is there something wrong?<br>
+Régis</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43713022#comment-43713022" id="comment-permalink-43713022"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=43713022&amp;pageId=37749559" id="reply-comment-43713022"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43713022#comment-43713022"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43713022#comment-43713022"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/43713022"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-43714068" class="comment-thread">
+                    <div class="comment   odd" id="comment-43714068">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-7" data-username="moragab@gmail.com" href="https://wiki.jenkins-ci.org/display/~moragab@gmail.com" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: moragab@gmail.com" title="">
+           </a>                </p>
+                <p class="date" title="May 12, 2010 06:10">
+                    May 12, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~moragab@gmail.com" class="url fn confluence-userlink userlink-7" data-username="moragab@gmail.com" title="" data-user-hover-bound="true">Mohamed Ragab</a> says:</h4>
+                                        <span class="excerpt">Hi,
+
+The latest version of Hudson as of the time of writing this comment is 1.35...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Hi,</p>
+
+<p>The latest version of Hudson as of the time of writing this comment is 1.357 but the latest Debian package published is 1.352 and the latest RPM package published is 1.353</p>
+
+<p>Is this just lag, or is there a change in plans? </p>
+
+<p>Kind Regards<br>
+Mohamed Ragab</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714068#comment-43714068" id="comment-permalink-43714068"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=43714068&amp;pageId=37749559" id="reply-comment-43714068"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714068#comment-43714068"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714068#comment-43714068"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/43714068"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-43714206" class="comment-thread">
+                    <div class="comment  " id="comment-43714206">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-8" data-username="willemv" href="https://wiki.jenkins-ci.org/display/~willemv" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: willemv" title="">
+           </a>                </p>
+                <p class="date" title="May 18, 2010 03:48">
+                    May 18, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~willemv" class="url fn confluence-userlink userlink-8" data-username="willemv" title="" data-user-hover-bound="true">Willem Verstraeten</a> says:</h4>
+                                        <span class="excerpt">Hi,
+
+It seems as if the URL of the apt-get repository changed to 
+deb http://jen...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Hi,</p>
+
+<p>It seems as if the URL of the apt-get repository changed to <br>
+deb <a href="http://jenkins-ci.org/debian" class="external-link" rel="nofollow">http://jenkins-ci.org/debian</a> binary/</p>
+
+<p>I did get an error on my Debian 5.0.4 machine, but on Ubuntu it seems to work. Got to investigate.</p>
+
+<p>The error was </p>
+
+<p>302 Found <a href="http://pkg.jenkins-ci.org/debian/binary/Packages" class="external-link" rel="nofollow">http://pkg.jenkins-ci.org/debian/binary/Packages</a></p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714206#comment-43714206" id="comment-permalink-43714206"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=43714206&amp;pageId=37749559" id="reply-comment-43714206"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714206#comment-43714206"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714206#comment-43714206"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/43714206"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-43714349" class="comment-thread">
+                    <div class="comment   odd" id="comment-43714349">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-9" data-username="tcharl" href="https://wiki.jenkins-ci.org/display/~tcharl" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: tcharl" title="">
+           </a>                </p>
+                <p class="date" title="May 23, 2010 13:23">
+                    May 23, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~tcharl" class="url fn confluence-userlink userlink-9" data-username="tcharl" title="" data-user-hover-bound="true">tcharl -</a> says:</h4>
+                                        <span class="excerpt">Hi,
+
+Sorry, I can't find where I could post an Issue on Your JIRA.
+
+Can you put ...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Hi,</p>
+
+<p>Sorry, I can't find where I could post an Issue on Your JIRA.</p>
+
+<p>Can you put the Latest 1.359 rpm's version please, we're stuck with 1.353 and so with the "java.lang.Error: This page expects a form submission" when creating a new Job</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714349#comment-43714349" id="comment-permalink-43714349"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=43714349&amp;pageId=37749559" id="reply-comment-43714349"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714349#comment-43714349"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=43714349#comment-43714349"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/43714349"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-46335109" class="comment-thread">
+                    <div class="comment  " id="comment-46335109">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-10" data-username="sobersabre" href="https://wiki.jenkins-ci.org/display/~sobersabre" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/user_headphones.gif" alt="User icon: sobersabre" title="">
+           </a>                </p>
+                <p class="date" title="Aug 28, 2010 10:17">
+                    Aug 28, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~sobersabre" class="url fn confluence-userlink userlink-10" data-username="sobersabre" title="" data-user-hover-bound="true">Max V.K.</a> says:</h4>
+                                        <span class="excerpt">hi there.
+I've noticed the debian repository responds with response "302", which...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>hi there.<br>
+I've noticed the debian repository responds with response "302", which is redirect related.<br>
+apt does not support redirects as of now. Debian stabe apt does not.<br>
+I am currently forced to download the file manually, although it is found in the repository.</p>
+
+<p>Can somebody please change the setup so that not a redirect is returned, but the file?</p>
+
+<p>Thanks.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46335109#comment-46335109" id="comment-permalink-46335109"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=46335109&amp;pageId=37749559" id="reply-comment-46335109"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46335109#comment-46335109"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46335109#comment-46335109"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/46335109"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-46337341" class="comment-thread">
+                    <div class="comment   odd" id="comment-46337341">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-11" data-username="seidler2547" href="https://wiki.jenkins-ci.org/display/~seidler2547" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: seidler2547" title="">
+           </a>                </p>
+                <p class="date" title="Nov 08, 2010 00:27">
+                    Nov 08, 2010
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~seidler2547" class="url fn confluence-userlink userlink-11" data-username="seidler2547" title="" data-user-hover-bound="true">Stefan Seidel</a> says:</h4>
+                                        <span class="excerpt">Here's a workaround for lenny: you need: apache2, mod_proxy.
+
+Then create a file...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Here's a workaround for lenny: you need: apache2, mod_proxy.</p>
+
+<p>Then create a file /etc/apache2/sites-available/hudson-deb with this content:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>&lt;VirtualHost *:80&gt;
+  ServerName hudson-deb.local
+  RewriteEngine On
+  RewriteRule ^/debian/binary/(.+\.deb) http://download.jenkins-ci.org/debian/$1 [P]
+  RewriteRule ^(.*)$ http://pkg.jenkins-ci.org$1 [P]
+  &lt;Proxy *&gt;
+    Order Deny,Allow
+    Allow from all
+  &lt;/Proxy&gt;
+&lt;/VirtualHost&gt;
+</pre>
+</div></div>
+<p>Edit /etc/hosts and add <b>hudson-deb.local</b> as the last term on the line containing <b>127.0.0.1</b> (separate it with a space).</p>
+
+
+<p>Then enable the proxy and the site and restart the apache:</p>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">a2enmod proxy_http
+a2ensite hudson-deb
+/etc/init.d/apache2 restart
+</pre>
+</div></div>
+<p>Then you just add the file <b>/etc/apt/sources.list.d/hudson.list</b> with the following content:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>deb http://hudson-deb.local/debian binary/
+</pre>
+</div></div>
+<p>And off you go with:</p>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">apt-get update &amp;&amp; apt-get install hudson
+</pre>
+</div></div>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46337341#comment-46337341" id="comment-permalink-46337341"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=46337341&amp;pageId=37749559" id="reply-comment-46337341"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46337341#comment-46337341"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=46337341#comment-46337341"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/46337341"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-57180987" class="comment-thread">
+                    <div class="comment  " id="comment-57180987">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-12" data-username="danapsimer" href="https://wiki.jenkins-ci.org/display/~danapsimer" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: danapsimer" title="">
+           </a>                </p>
+                <p class="date" title="Apr 12, 2011 17:40">
+                    Apr 12, 2011
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~danapsimer" class="url fn confluence-userlink userlink-12" data-username="danapsimer" title="" data-user-hover-bound="true">Dana P'Simer</a> says:</h4>
+                                        <span class="excerpt">the "sudo a2dissite default" step should only be done if you do not want the def...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>the "<tt>sudo a2dissite default</tt>" step should only be done if you do not want the default site to stay in place. &nbsp;All the steps described should work without this step in a normal virtual hosted environment on a Debian/Ubuntu installation.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57180987#comment-57180987" id="comment-permalink-57180987"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=57180987&amp;pageId=37749559" id="reply-comment-57180987"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57180987#comment-57180987"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57180987#comment-57180987"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/57180987"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-57999570" class="comment-thread">
+                    <div class="comment   odd" id="comment-57999570">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-13" data-username="sbromley" href="https://wiki.jenkins-ci.org/display/~sbromley" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: sbromley" title="">
+           </a>                </p>
+                <p class="date" title="Jul 22, 2011 17:36">
+                    Jul 22, 2011
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~sbromley" class="url fn confluence-userlink userlink-13" data-username="sbromley" title="" data-user-hover-bound="true">Steven Bromley</a> says:</h4>
+                                        <span class="excerpt">It should probably be more clear that installing Jenkins is going to replace any...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>It should probably be more clear that installing Jenkins is going to replace any current installations of Hudson you have on a box.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57999570#comment-57999570" id="comment-permalink-57999570"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=57999570&amp;pageId=37749559" id="reply-comment-57999570"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57999570#comment-57999570"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=57999570#comment-57999570"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/57999570"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-58003065" class="comment-thread">
+                    <div class="comment  " id="comment-58003065">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-14" data-username="barry" href="https://wiki.jenkins-ci.org/display/~barry" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: barry" title="">
+           </a>                </p>
+                <p class="date" title="Oct 10, 2011 19:20">
+                    Oct 10, 2011
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~barry" class="url fn confluence-userlink userlink-14" data-username="barry" title="" data-user-hover-bound="true">Barry Warsaw</a> says:</h4>
+                                        <span class="excerpt">Ubuntu 11.10 (Oneiric) has Jenkins 1.409.1 afaict. &nbsp; sudo apt-get install j...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Ubuntu 11.10 (Oneiric) has Jenkins 1.409.1 afaict. &nbsp; <b>sudo apt-get install jenkins jenkins-cli</b> should get you the basics (do <b>aptitude search jenkins</b> for the full suite of packages). &nbsp;<b>sudo service jenkins start</b> should start the server by default on localhost:8080.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=58003065#comment-58003065" id="comment-permalink-58003065"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=58003065&amp;pageId=37749559" id="reply-comment-58003065"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=58003065#comment-58003065"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=58003065#comment-58003065"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/58003065"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-59508234" class="comment-thread">
+                    <div class="comment   odd" id="comment-59508234">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-15" data-username="edwardyoung" href="https://wiki.jenkins-ci.org/display/~edwardyoung" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: edwardyoung" title="">
+           </a>                </p>
+                <p class="date" title="Nov 23, 2011 21:33">
+                    Nov 23, 2011
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~edwardyoung" class="url fn confluence-userlink userlink-15" data-username="edwardyoung" title="" data-user-hover-bound="true">Ed Young</a> says:</h4>
+                                        <span class="excerpt">I have jenkins conflicting with tomcat because both run on port 8080.
+
+I've just...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>I have jenkins conflicting with tomcat because both run on port 8080.</p>
+
+<p>I've just upgraded to 11.10 and installed tomcat7 (port 8080 default) and then jenkins as a standalone. Both done using synaptic.</p>
+
+<p>jenkins fails with a port already in use exception, so I need to reconfigure it so it's on a different port. What's the best way to do this?</p>
+
+<p>The section above entitled:</p>
+
+<p>Setting up an Apache Proxy for port 80 -&gt; 8080</p>
+
+
+<ul>
+	<li>This configuration will setup Apache2 to proxy port 80 to 8080 so that you can keep Jenkins on 8080.</li>
+</ul>
+
+
+
+<p>If I follow that, it appears that jenkins will still be on port 8080, and that will conflict with tomcat.</p>
+
+<p>I'm only starting to be familiar with how Ubuntu installs tomcat and jenkins. What's the best way to change the port of either tomcat or jenkins from 8080 so they don't conflict?</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508234#comment-59508234" id="comment-permalink-59508234"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=59508234&amp;pageId=37749559" id="reply-comment-59508234"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508234#comment-59508234"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508234#comment-59508234"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/59508234"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-59508239" class="comment-thread">
+                    <div class="comment  " id="comment-59508239">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-15" data-username="edwardyoung" href="https://wiki.jenkins-ci.org/display/~edwardyoung" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: edwardyoung" title="">
+           </a>                </p>
+                <p class="date" title="Nov 23, 2011 22:12">
+                    Nov 23, 2011
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~edwardyoung" class="url fn confluence-userlink userlink-15" data-username="edwardyoung" title="" data-user-hover-bound="true">Ed Young</a> says:</h4>
+                                        <span class="excerpt">Where can I find the configuration file to change the port where jenkins runs?
+
+...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Where can I find the configuration file to change the port where jenkins runs?</p>
+
+
+<p>the instructions above indicate that</p>
+
+<p><tt>/etc/default/jenkins</tt> will capture configuration parameters for the launch.</p>
+
+<p>After installation using synaptic on 11.10, there is no /etc/default/jenkins file. </p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508239#comment-59508239" id="comment-permalink-59508239"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=59508239&amp;pageId=37749559" id="reply-comment-59508239"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508239#comment-59508239"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=59508239#comment-59508239"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/59508239"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-60917251" class="comment-thread">
+                    <div class="comment   odd" id="comment-60917251">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-16" data-username="bchew" href="https://wiki.jenkins-ci.org/display/~bchew" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: bchew" title="">
+           </a>                </p>
+                <p class="date" title="Apr 18, 2012 07:01">
+                    Apr 18, 2012
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~bchew" class="url fn confluence-userlink userlink-16" data-username="bchew" title="" data-user-hover-bound="true">Benny Chew</a> says:</h4>
+                                        <span class="excerpt">Just installed using Aptitude (v1.460) on Ubuntu 11.10, the line in /etc/default...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Just installed using Aptitude (v1.460) on Ubuntu 11.10, the line in /etc/default/jenkins to change would be the following:</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java"># port <span class="code-keyword">for</span> HTTP connector (<span class="code-keyword">default</span> 8080; disable with -1)
+HTTP_PORT=8080
+</pre>
+</div></div>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=60917251#comment-60917251" id="comment-permalink-60917251"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=60917251&amp;pageId=37749559" id="reply-comment-60917251"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=60917251#comment-60917251"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=60917251#comment-60917251"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/60917251"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-64684055" class="comment-thread">
+                    <div class="comment  " id="comment-64684055">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-17" data-username="fangchin" href="https://wiki.jenkins-ci.org/display/~fangchin" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: fangchin" title="">
+           </a>                </p>
+                <p class="date" title="Oct 02, 2012 18:46">
+                    Oct 02, 2012
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~fangchin" class="url fn confluence-userlink userlink-17" data-username="fangchin" title="" data-user-hover-bound="true">Chin Fang</a> says:</h4>
+                                        <span class="excerpt">Why in the current Ubuntu package, 1.484, the group for the 'jenkins' user is se...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Why in the current Ubuntu package, 1.484, the group for the 'jenkins' user is set to 'nogroup'?&nbsp; The group in the corresponding RPM is set to 'jenkins' however. Admitted this is not a fatal inconsistency, but an inconsistency nevertheless?</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=64684055#comment-64684055" id="comment-permalink-64684055"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=64684055&amp;pageId=37749559" id="reply-comment-64684055"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=64684055#comment-64684055"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=64684055#comment-64684055"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/64684055"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-69763607" class="comment-thread">
+                    <div class="comment   odd" id="comment-69763607">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-18" data-username="abtrapp" href="https://wiki.jenkins-ci.org/display/~abtrapp" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: abtrapp" title="">
+           </a>                </p>
+                <p class="date" title="Oct 01, 2013 16:09">
+                    Oct 01, 2013
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~abtrapp" class="url fn confluence-userlink userlink-18" data-username="abtrapp" title="" data-user-hover-bound="true">Anton Trapp</a> says:</h4>
+                                        <span class="excerpt">On debian squeeze one of the latest updates does something very ugly... - runnin...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>On debian squeeze one of the latest updates does something very ugly... - running system - aptitude update - now this:</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">org.jvnet.hudson.reactor.ReactorException: hudson.util.IOException2: Unable to read /<span class="code-keyword">var</span>/lib/jenkins/config.xml	at org.jvnet.hudson.reactor.Reactor.execute(Reactor.java:246)
+at jenkins.InitReactorRunner.run(InitReactorRunner.java:43)
+at jenkins.model.Jenkins.executeReactor(Jenkins.java:910)
+at jenkins.model.Jenkins.&lt;init&gt;(Jenkins.java:806)
+at hudson.model.Hudson.&lt;init&gt;(Hudson.java:81)
+at hudson.model.Hudson.&lt;init&gt;(Hudson.java:77)
+at hudson.WebAppMain$3.run(WebAppMain.java:221)
+Caused by: hudson.util.IOException2: Unable to read /<span class="code-keyword">var</span>/lib/jenkins/config.xml
+at hudson.XmlFile.unmarshal(XmlFile.java:170)
+at jenkins.model.Jenkins$17.run(Jenkins.java:2530)
+at org.jvnet.hudson.reactor.TaskGraphBuilder$TaskImpl.run(TaskGraphBuilder.java:146)
+at org.jvnet.hudson.reactor.Reactor.runTask(Reactor.java:259)
+at jenkins.model.Jenkins$7.runTask(Jenkins.java:899)
+at org.jvnet.hudson.reactor.Reactor$2.run(Reactor.java:187)
+at org.jvnet.hudson.reactor.Reactor$Node.run(Reactor.java:94)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1146)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+at java.lang.<span class="code-object">Thread</span>.run(<span class="code-object">Thread</span>.java:679)
+Caused by: com.thoughtworks.xstream.converters.ConversionException: Could not set field class hudson.security.csrf.DefaultCrumbIssuer.PROXY_HEADER : <span class="code-keyword">null</span> : Could not set field class hudson.security.csrf.DefaultCrumbIssuer.PROXY_HEADER : <span class="code-keyword">null</span>
+---- Debugging information ----
+message : Could not set field class hudson.security.csrf.DefaultCrumbIssuer.PROXY_HEADER : <span class="code-keyword">null</span>
+cause-exception : com.thoughtworks.xstream.converters.reflection.ObjectAccessException
+cause-message : Could not set field class hudson.security.csrf.DefaultCrumbIssuer.PROXY_HEADER : <span class="code-keyword">null</span>
+class : hudson.security.csrf.DefaultCrumbIssuer
+required-type : hudson.security.csrf.DefaultCrumbIssuer
+converter-type : hudson.util.RobustReflectionConverter
+path : /hudson/crumbIssuer/PROXY_HEADER
+line number : 65
+class1 : hudson.model.Hudson
+version : not available
+</pre>
+</div></div>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;hudson&gt;
+&lt;disabledAdministrativeMonitors/&gt;
+&lt;version&gt;1.521&lt;/version&gt;
+&lt;numExecutors&gt;1&lt;/numExecutors&gt;
+&lt;mode&gt;NORMAL&lt;/mode&gt;
+&lt;useSecurity&gt;<span class="code-keyword">true</span>&lt;/useSecurity&gt;
+&lt;authorizationStrategy class=<span class="code-quote">"hudson.security.ProjectMatrixAuthorizationStrategy"</span>&gt;
+&lt;permission&gt;hudson.model.Computer.Build:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Computer.Configure:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Computer.Connect:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Computer.Create:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Computer.Delete:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Computer.Disconnect:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Hudson.Administer:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Hudson.ConfigureUpdateCenter:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Hudson.Read:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Hudson.RunScripts:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Hudson.UploadPlugins:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Build:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Cancel:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Configure:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Create:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Delete:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Discover:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Read:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.Item.Workspace:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.View.Configure:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.View.Create:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.View.Delete:atrapp&lt;/permission&gt;
+&lt;permission&gt;hudson.model.View.Read:atrapp&lt;/permission&gt;
+&lt;/authorizationStrategy&gt;
+&lt;securityRealm class=<span class="code-quote">"hudson.security.HudsonPrivateSecurityRealm"</span>&gt;
+&lt;disableSignup&gt;<span class="code-keyword">false</span>&lt;/disableSignup&gt;
+&lt;enableCaptcha&gt;<span class="code-keyword">false</span>&lt;/enableCaptcha&gt;
+&lt;/securityRealm&gt;
+&lt;projectNamingStrategy class=<span class="code-quote">"jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"</span>/&gt;
+&lt;workspaceDir&gt;$
+
+{JENKINS_HOME}
+/workspace/$
+
+{ITEM_FULLNAME}
+&lt;/workspaceDir&gt;
+&lt;buildsDir&gt;$
+
+{ITEM_ROOTDIR}
+/builds&lt;/buildsDir&gt;
+&lt;systemMessage&gt;bla bla not relevant here&lt;/systemMessage&gt;
+&lt;markupFormatter class=<span class="code-quote">"hudson.markup.RawHtmlMarkupFormatter"</span>&gt;
+&lt;disableSyntaxHighlighting&gt;<span class="code-keyword">false</span>&lt;/disableSyntaxHighlighting&gt;
+&lt;/markupFormatter&gt;
+&lt;jdks/&gt;
+&lt;viewsTabBar class=<span class="code-quote">"hudson.views.DefaultViewsTabBar"</span>/&gt;
+&lt;myViewsTabBar class=<span class="code-quote">"hudson.views.DefaultMyViewsTabBar"</span>/&gt;
+&lt;clouds/&gt;
+&lt;slaves/&gt;
+&lt;quietPeriod&gt;60&lt;/quietPeriod&gt;
+&lt;scmCheckoutRetryCount&gt;0&lt;/scmCheckoutRetryCount&gt;
+&lt;views&gt;
+&lt;hudson.model.AllView&gt;
+&lt;owner class=<span class="code-quote">"hudson"</span> reference=<span class="code-quote">"../../.."</span>/&gt;
+&lt;name&gt;Alle&lt;/name&gt;
+&lt;filterExecutors&gt;<span class="code-keyword">false</span>&lt;/filterExecutors&gt;
+&lt;filterQueue&gt;<span class="code-keyword">false</span>&lt;/filterQueue&gt;
+&lt;properties class=<span class="code-quote">"hudson.model.View$PropertyList"</span>/&gt;
+&lt;/hudson.model.AllView&gt;
+&lt;/views&gt;
+&lt;primaryView&gt;Alle&lt;/primaryView&gt;
+&lt;slaveAgentPort&gt;0&lt;/slaveAgentPort&gt;
+&lt;label&gt;&lt;/label&gt;
+&lt;crumbIssuer class=<span class="code-quote">"hudson.security.csrf.DefaultCrumbIssuer"</span>&gt;
+&lt;excludeClientIPFromCrumb&gt;<span class="code-keyword">false</span>&lt;/excludeClientIPFromCrumb&gt;
+&lt;PROXY_HEADER&gt;X-Forwarded-For&lt;/PROXY_HEADER&gt;
+&lt;/crumbIssuer&gt;
+&lt;nodeProperties/&gt;
+&lt;globalNodeProperties/&gt;
+&lt;/hudson&gt;
+</pre>
+</div></div>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=69763607#comment-69763607" id="comment-permalink-69763607"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=69763607&amp;pageId=37749559" id="reply-comment-69763607"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=69763607#comment-69763607"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=69763607#comment-69763607"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/69763607"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-70877225" class="comment-thread">
+                    <div class="comment  " id="comment-70877225">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-19" data-username="dsheiko" href="https://wiki.jenkins-ci.org/display/~dsheiko" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/dsheiko-84070-pp-sheiko.jpg" alt="User icon: dsheiko" title="">
+           </a>                </p>
+                <p class="date" title="Nov 15, 2013 16:40">
+                    Nov 15, 2013
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~dsheiko" class="url fn confluence-userlink userlink-19" data-username="dsheiko" title="" data-user-hover-bound="true">Dmitry Sheiko</a> says:</h4>
+                                        <span class="excerpt">On dpkg-deb: error: subprocess paste was killed by signal (Broken pipe)
+Errors w...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>On dpkg-deb: error: subprocess paste was killed by signal (Broken pipe)<br>
+Errors were encountered while processing:<br>
+&nbsp;/var/cache/apt/archives/jenkins_1.539_all.deb<br>
+E: Sub-process /usr/bin/dpkg returned an error code (1)<br>
+On Ubuntu 12.04.3 LTS on any attempt to install jenkins<br>
+sudo apt-get install jenkins<br>
+sudo&nbsp;apt-get install -f jenkins</p>
+
+<p>it ends up with the error:</p>
+
+<p><em>...</em></p>
+
+<p><em>dpkg: error processing /var/cache/apt/archives/jenkins_1.539_all.deb (--unpack):</em></p>
+
+<p><em>&nbsp;trying to overwrite '/usr/share/jenkins/jenkins.war', which is also in package jenkins-common 1.424.6+dfsg-1ubuntu0.2</em></p>
+
+<p><em>dpkg-deb: error: subprocess paste was killed by signal (Broken pipe)</em></p>
+
+<p><em>Errors were encountered while processing:</em></p>
+
+<p><em>&nbsp;/var/cache/apt/archives/jenkins_1.539_all.deb</em></p>
+
+<p><em>E: Sub-process /usr/bin/dpkg returned an error code (1)</em></p>
+
+<p>P.S. I tried to install some &nbsp;old version<br>
+apt-get install jenkins=1.424.6+dfsg-1ubuntu0.2<br>
+and it worked fine</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=70877225#comment-70877225" id="comment-permalink-70877225"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=70877225&amp;pageId=37749559" id="reply-comment-70877225"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=70877225#comment-70877225"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=70877225#comment-70877225"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/70877225"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-72417948" class="comment-thread">
+                    <div class="comment   odd" id="comment-72417948">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-20" data-username="engineerus" href="https://wiki.jenkins-ci.org/display/~engineerus" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: engineerus" title="">
+           </a>                </p>
+                <p class="date" title="Apr 08, 2014 21:40">
+                    Apr 08, 2014
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~engineerus" class="url fn confluence-userlink userlink-20" data-username="engineerus" title="" data-user-hover-bound="true">Michael Kryzhanovsky</a> says:</h4>
+                                        <span class="excerpt">Installing under apache has some caveats. In my case I wanted Jenkins to respond...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Installing under apache has some caveats. In my case I wanted Jenkins to respond to a subomain, e.g. ci.myhost.com. In this case the config should be as follows:</p>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml"><span class="code-tag">&lt;VirtualHost *:80&gt;</span>
+        ServerName ci.myhost.com
+        ServerAlias ci
+
+        ProxyRequests Off
+        <span class="code-tag">&lt;Proxy *&gt;</span>
+                Order deny,allow
+                Allow from all
+        <span class="code-tag">&lt;/Proxy&gt;</span>
+        ProxyPreserveHost on
+        ProxyPass / http://localhost:8080/ nocanon
+        ProxyPassReverse / http://ci.myhost.com/
+        AllowEncodedSlashes NoDecode
+<span class="code-tag">&lt;/VirtualHost&gt;</span></pre>
+</div></div>
+<p>Note, that <em>nocanon</em> and <em>NoDecode</em> are important.<br>
+A simple tool comes with Jenkins to test your proxy configuration, so you can check if everything works correctly as follows:<br>
+<tt>curl -iL <a href="http://ci.myhost.com/administrativeMonitor/hudson.diagnosis.ReverseProxySetupMonitor/test" class="external-link" rel="nofollow">http://ci.myhost.com/administrativeMonitor/hudson.diagnosis.ReverseProxySetupMonitor/test</a></tt></p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=72417948#comment-72417948" id="comment-permalink-72417948"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=72417948&amp;pageId=37749559" id="reply-comment-72417948"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=72417948#comment-72417948"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=72417948#comment-72417948"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/72417948"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-75893237" class="comment-thread">
+                    <div class="comment  " id="comment-75893237">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-21" data-username="aamcintosh" href="https://wiki.jenkins-ci.org/display/~aamcintosh" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: aamcintosh" title="">
+           </a>                </p>
+                <p class="date" title="Mar 10, 2015 21:53">
+                    Mar 10, 2015
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~aamcintosh" class="url fn confluence-userlink userlink-21" data-username="aamcintosh" title="" data-user-hover-bound="true">Allen McIntosh</a> says:</h4>
+                                        <span class="excerpt">Above didn't work for me unfortunately.&nbsp; Ubuntu 14.04, followed the instruc...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Above didn't work for me unfortunately.&nbsp; Ubuntu 14.04, followed the instructions down to apt-get install.&nbsp; I changed the port number to 8888.&nbsp; ps shows that jenkins is running:</p>
+
+<p>/usr/bin/java -Djava.awt.headless=true -jar /usr/share/jenkins/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8888 --ajp13Port=-1</p>
+
+<p>but there is no response when I try to connect to port 8888.&nbsp; The log looks clean except for the "NO JSP support" message:</p>
+
+<p>Running from: /usr/share/jenkins/jenkins.war<br>
+Mar 10, 2015 5:07:55 PM winstone.Logger logInternal<br>
+INFO: Beginning extraction from war file<br>
+Mar 10, 2015 5:07:55 PM org.eclipse.jetty.util.log.JavaUtilLog info<br>
+INFO: jetty-winstone-2.8<br>
+Mar 10, 2015 5:07:57 PM org.eclipse.jetty.util.log.JavaUtilLog info<br>
+INFO: NO JSP Support for , did not find org.apache.jasper.servlet.JspServlet<br>
+Jenkins home directory: /var/lib/jenkins found at: EnvVars.masterEnvVars.get("JENKINS_HOME")<br>
+Mar 10, 2015 5:07:58 PM org.eclipse.jetty.util.log.JavaUtilLog info<br>
+INFO: Started SelectChannelConnector@0.0.0.0:8888<br>
+Mar 10, 2015 5:07:58 PM winstone.Logger logInternal<br>
+INFO: Winstone Servlet Engine v2.0 running: controlPort=disabled</p>
+
+<p>...</p>
+
+<p>When my browser tries to connect to port 8888, wireshark shows an HTTP GET being sent, and that is all.</p>
+
+<p>Where do I go from here?</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=75893237#comment-75893237" id="comment-permalink-75893237"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=75893237&amp;pageId=37749559" id="reply-comment-75893237"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=75893237#comment-75893237"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=75893237#comment-75893237"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/75893237"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-80184491" class="comment-thread">
+                    <div class="comment   odd" id="comment-80184491">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-22" data-username="jfdnih" href="https://wiki.jenkins-ci.org/display/~jfdnih" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: jfdnih" title="">
+           </a>                </p>
+                <p class="date" title="Jun 24, 2015 19:25">
+                    Jun 24, 2015
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~jfdnih" class="url fn confluence-userlink userlink-22" data-username="jfdnih" title="" data-user-hover-bound="true">Jonathan Dill</a> says:</h4>
+                                        <span class="excerpt">With newer Ubuntu 15.04 where 'sh' resolves to 'dash' instead of 'bash' I had to...</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>With newer Ubuntu 15.04 where 'sh' resolves to 'dash' instead of 'bash' I had to use this command:</p>
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>sudo bash -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list'
+</pre>
+</div></div>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=80184491#comment-80184491" id="comment-permalink-80184491"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=80184491&amp;pageId=37749559" id="reply-comment-80184491"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=80184491#comment-80184491"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=80184491#comment-80184491"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/80184491"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-98402856" class="comment-thread">
+                    <div class="comment  " id="comment-98402856">
+                <p class="comment-user-logo">
+                    <a class="userLogoLink userlink-23" data-username="abhimanyusingh5" href="https://wiki.jenkins-ci.org/display/~abhimanyusingh5" title="" data-user-hover-bound="true">
+               <img class="userLogo logo" src="./Installing Jenkins on Ubuntu - Jenkins - Jenkins Wiki_files/default.gif" alt="User icon: abhimanyusingh5" title="">
+           </a>                </p>
+                <p class="date" title="May 12, 2016 06:52">
+                    May 12, 2016
+                </p>
+                <div class="comment-header comment-toggle" title="Click to toggle the display of this comment." style="cursor: pointer;">
+                    <h4 class="author"><a href="https://wiki.jenkins-ci.org/display/~abhimanyusingh5" class="url fn confluence-userlink userlink-23" data-username="abhimanyusingh5" title="" data-user-hover-bound="true">Abhimanyu Singh</a> says:</h4>
+                                        <span class="excerpt">Hi,
+
+Can anyone tell me what is the minimum java version required for Jenkins 2....</span>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>Hi,</p>
+
+<p>Can anyone tell me what is the minimum java version required for Jenkins 2.x version.</p>
+
+<p>Do we need to update java to 1.8 or 1.7 will be fine. I installed it on debian 7 with java 1.7 and jenkins service is not starting.</p>
+
+<p>Thanks,</p>
+                    </div>
+                    <div class="comment-actions">
+                                                    <ul id="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=98402856#comment-98402856" id="comment-permalink-98402856"><span>Permalink</span></a></li>
+            </ul>
+                            <ul id="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a href="https://wiki.jenkins-ci.org/pages/replycomment.action?commentId=98402856&amp;pageId=37749559" id="reply-comment-98402856"><span>Reply</span></a></li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=98402856#comment-98402856"
+    dc:identifier="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?focusedCommentId=98402856#comment-98402856"
+    dc:title="Installing Jenkins on Ubuntu"
+    trackback:ping="https://wiki.jenkins-ci.org/rpc/trackback/98402856"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                </ol>
+    
+                                    <p class="noprint">
+                <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu?showComments=true&amp;showCommentArea=true#addcomment" id="add-comment-bottom" accesskey="m">Add Comment</a>
+            </p>
+                        </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+
+    
+    
+
+    
+    
+    
+
+
+<fieldset class="hidden parameters">
+        <input type="hidden" title="i18n.done.name" value="Done">
+        <input type="hidden" title="i18n.manage.watchers.dialog.title" value="Manage Watchers">
+        <input type="hidden" title="i18n.manage.watchers.unable.to.remove.error" value="Failed to remove watcher. Refresh page to see latest status.">
+        <input type="hidden" title="i18n.manage.watchers.status.adding.watcher" value="Adding watcher&amp;hellip;">
+</fieldset>
+<script type="text/x-template" title="manage-watchers-dialog">
+<div class="dialog-content">
+    <div class="column page-watchers">
+        <h3>Watching this page</h3>
+        <p class="description">These people are notified when the page is changed. You can add or remove people from this list.</p>
+        <form action="/json/addwatch.action" method="POST">
+                <input type="hidden" name="atl_token" value="aa963de51ced40e160cefba7d40e8041ee5a359a">
+            <input type="hidden" name="pageId" value="37749559"/>
+            <input type="hidden" id="add-watcher-username" name="username" value=""/>
+            <label for="add-watcher-user">User</label>
+            <input id="add-watcher-user" name="userFullName" type="search" class="autocomplete-user"
+               value="" placeholder="Full name or username" autocomplete="off"
+               data-max="10" data-target="#add-watcher-username" data-dropdown-target="#add-watcher-dropdown"
+               data-template="{title}" data-none-message="No matching users found.">
+            <input id="add-watcher-submit" type="submit" name="add" value="Add">
+            <div id="add-watcher-dropdown" class="aui-dd-parent autocomplete"></div>
+            <div class="status hidden"></div>
+        </form>
+        <ul class="user-list">
+            <li class="loading">Loading&hellip;</li>
+            <li class="no-users hidden">No page watchers</li>
+        </ul>
+    </div>
+    <div class="column space-watchers">
+        <h3>Watching this space</h3>
+        <p class="description">These people are notified when any content in the space is changed. You cannot modify this list.</p>
+        <ul class="user-list">
+            <li class="loading">Loading&hellip;</li>
+            <li class="no-users hidden">No space watchers</li>
+        </ul>
+    </div>
+</div>
+</script>
+<script type="text/x-template" title="manage-watchers-user">
+    <li class="watch-user">
+        <img class="profile-picture confluence-userlink" src="{iconUrl}" data-username="{username}">
+        <a class="confluence-userlink" href="{url}" data-username="{username}">{fullName} <span class="username">({username})</span></a>
+        <span class="remove-watch" title="Remove"
+            data-username="{username}">Remove</span>
+    </li>
+</script>
+<script type="text/x-template" title="manage-watchers-help-link">
+    <div class="dialog-help-link">
+            <a href="http://docs.atlassian.com/confluence/docs-34/Managing+Watchers" target="_blank">Help</a>
+    </div>
+</script>
+    <br class="clear">
+</div><!-- \#main -->
+
+<div id="footer">
+                                                <p class="license license-opensource">
+                  Powered by a free <b>Atlassian Confluence Open Source Project License</b> granted to Jenkins. <a href="http://www.atlassian.com/c/conf/11461">Evaluate Confluence today</a>.<br>
+                </p>
+                        
+    <ul id="poweredby">
+        <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> 3.4.7, the <a href="http://www.atlassian.com/software/confluence/tour/enterprise-wiki.jsp" class="hover-footer-link">Enterprise Wiki</a></li>
+        <li class="print-only">Printed by Atlassian Confluence 3.4.7, the Enterprise Wiki.</li>        
+        <li class="noprint"> &nbsp; |&nbsp; <a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="hover-footer-link">Report a bug</a></li>
+        <li class="noprint"> &nbsp;|&nbsp; <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+    </ul>
+
+    
+
+            
+    </div></div><!-- \#full-height-container -->
+</div><!-- \#page -->
+
+
+<div id="content-hover-0" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-1" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-2" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-3" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-4" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-5" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-6" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-7" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-8" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-9" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-10" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-11" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-12" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-13" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-14" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-15" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-16" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-17" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-18" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-19" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-20" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-21" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-22" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div id="content-hover-23" class="ajs-content-hover"><div class="contents" style="width: 300px;"></div></div><div class="aui-popup aui-dialog" id="link-page-popup" disabled="" style="margin-top: -105px; margin-left: -300px; width: 600px; height: 210px; background: rgb(255, 255, 255); z-index: 3002; display: none;"><div class="dialog-components"><h2 class="dialog-title">Link to this Page</h2><ul class="dialog-page-menu" style="height: 114px; display: none;"><li class="page-menu-item selected"><button class="item-button">Link to this Page</button></li></ul><div class="dialog-page-body"><div class="dialog-panel-body" style="height: 104px;"><form id="link-page-popup-form" class="aui"><fieldset><div class="field-group"><label for="link-popup-field-link">Link:</label><input id="link-popup-field-link" readonly="readonly" value="" '="" class="text" type="text"></div><div class="field-group"><label for="link-popup-field-tiny-link">Tiny Link:</label><input id="link-popup-field-tiny-link" readonly="readonly" value="" '="" class="text" type="text"></div><div class="field-group"><label for="link-popup-field-wiki-markup">Wiki Markup:</label><input id="link-popup-field-wiki-markup" readonly="readonly" value="" '="" class="text" type="text"></div></fieldset></form></div></div><div class="dialog-button-panel"><button class="button-panel-button link-page-close-button">Close</button></div></div></div><div id="content-hover-shadow" style="display: none;"><div class="tl"></div><div class="tr"></div><div class="l"></div><div class="r"></div><div class="bl"></div><div class="br"></div><div class="b"></div></div><div id="fancy_overlay"></div><div id="fancy_wrap"><div class="fancy_loading" id="fancy_loading"><div></div></div><div id="fancy_outer"><div id="fancy_inner"><div id="fancy_close"></div><div id="fancy_bg"><div class="fancy_bg fancy_bg_n"></div><div class="fancy_bg fancy_bg_ne"></div><div class="fancy_bg fancy_bg_e"></div><div class="fancy_bg fancy_bg_se"></div><div class="fancy_bg fancy_bg_s"></div><div class="fancy_bg fancy_bg_sw"></div><div class="fancy_bg fancy_bg_w"></div><div class="fancy_bg fancy_bg_nw"></div></div><a href="javascript:;" id="fancy_left"><span class="fancy_ico" id="fancy_left_ico"></span></a><a href="javascript:;" id="fancy_right"><span class="fancy_ico" id="fancy_right_ico"></span></a><div id="fancy_content"></div><div id="fancy_title"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="fancy_title" id="fancy_title_left"></td><td class="fancy_title" id="fancy_title_main"><div></div></td><td class="fancy_title" id="fancy_title_right"></td></tr></tbody></table></div></div></div></div></body></html>

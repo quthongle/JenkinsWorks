@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/ -->
+<html id="XenForo" lang="en-US" dir="LTR" class="Public LoggedOut Sidebar Responsive hasJs NoTouch HasDragDrop" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<base href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/">--><base href=".">
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/cb=gapi.loaded_2" async=""></script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/cb=gapi.loaded_1" async=""></script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/cb=gapi.loaded_0" async=""></script><script async="" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/analytics.js"></script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ca-pub-3043223216276099.js"></script><script type="text/javascript" async="" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/recaptcha__en.js"></script><script async="" type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/gpt.js"></script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/osd.js"></script><script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+<title>How to Install Jenkins Automation Server with Apache on Ubuntu 16.04</title>
+<meta name="keywords" content="linux,server,ubuntu">
+<meta name="description" content="Jenkins is an automation server forked from the Hudson project. Jenkins is a server based application running in a Java servlet container, it has supp... ">
+<meta name="og:title" content="How to Install Jenkins Automation Server with Apache on Ubuntu 16.04">
+<meta name="og:description" content="Jenkins is an automation server forked from the Hudson project. Jenkins is a server based application running in a Java servlet container, it has supp... ">
+<meta name="og:site_name" content="Howtoforge">
+<meta name="og:type" content="article">
+<meta property="og:image" content="https://www.howtoforge.com/images/teaser/ubuntu.gif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="howtoforgecom">
+<meta name="twitter:creator" content="howtoforgecom">
+<meta name="twitter:title" content="How to Install Jenkins Automation Server with Apache on Ubuntu 16.04">
+<meta name="twitter:description" content="Jenkins is an automation server forked from the Hudson project. Jenkins is a server based application running in a Java servlet container, it has supp... ">
+<link rel="alternate" href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" hreflang="en">
+<link rel="canonical" href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/">
+
+<link rel="stylesheet" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/font-awesome.min.css">
+<link href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/css" rel="stylesheet" type="text/css">
+ 
+<link rel="stylesheet" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/css.php">
+<link rel="stylesheet" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/css(1).php">
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/jquery.min.js"></script>
+<script>if (!window.jQuery) { document.write('<scr'+'ipt type="text/javascript" src="/js/jquery/jquery-1.11.3.min.js"><\/scr'+'ipt>'); }</script>
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/xenforo.js"></script>
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/zloader.js"></script>
+<link href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/font-awesome.css" rel="stylesheet">
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/jquery.fancybox-1.3.4.css" media="screen">
+<link href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/style.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="RSS-Feed für Howtoforge" href="https://www.howtoforge.com/feed.rss">
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/tinymce.min.js"></script>
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/google_service.js">
+</script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-3043223216276099");
+GS_googleEnableAllServices();
+</script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/google_ads.js"></script>
+<script language="JavaScript">
+GA_googleAddAttr("Category", "Linux");
+GA_googleAddAttr("Category", "Server");
+GA_googleAddAttr("Category", "Ubuntu");
+</script>
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_leaderboard_a_728x90");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_rectangle_a_300x250");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_rectangle_b_300x250");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_halfpage_a_300x600");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_leaderboard_b_728x90");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_article_halfpage_b_300x600");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_textlink_a_600x50");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_textlink_b_600x50");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_textlink_c_600x50");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_textlink_d_600x50");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_list_sidebar_top");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_list_content_middle");
+GA_googleAddSlot("ca-pub-3043223216276099", "howtoforge_com_list_bottom");
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script>
+ 
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"https://www.howtoforge.com/community/help/cookies","theme":"dark-bottom"};
+</script>
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/cookieconsent.latest.min.js"></script>
+ 
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/pubads_impl_111.js" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-6/html/container.html"><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/sdk.js" async=""></script><script async="" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/client-plusone.js" gapi_processed="true"></script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/sdk.js" async=""></script><script async="" src="https://platform.twitter.com/widgets.js"></script><link rel="stylesheet" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/skin.min.css"><link rel="stylesheet" type="text/css" href="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/dark-bottom.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script id="_fbn_projs" type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/C6ADVKE.json"></script></head>
+<body><div class="cc_banner-wrapper "><div class="cc_banner cc_container cc_container--open"><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#null" data-cc-event="click:dismiss" class="cc_btn cc_btn_accept_all">Got it!</a><p class="cc_message">This website uses cookies to ensure you get the best experience on our website <a data-cc-if="options.link" class="cc_more_info" href="https://www.howtoforge.com/community/help/cookies">More info</a></p><a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">Cookie Consent plugin for the EU cookie law</a></div></div>
+<div id="loginBar">
+<div class="pageWidth">
+<div class="pageContent">
+<h3 id="loginBarHandle">
+<label for="LoginControl"><a href="https://www.howtoforge.com/community/login/" class="concealed noOutline">Log in or Sign up</a></label>
+</h3>
+<span class="helper"></span>
+<form action="https://www.howtoforge.com/community/login/login?redirect=/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" method="post" class="xenForm eAuth" id="login" style="display:none">
+<ul id="eAuthUnit">
+<li><a href="https://www.howtoforge.com/community/register/facebook?reg=1" class="fbLogin" tabindex="110"><span>Log in with Facebook</span></a></li>
+<li><a href="https://www.howtoforge.com/community/register/twitter?reg=1" class="twitterLogin" tabindex="110"><span>Log in with Twitter</span></a></li>
+<li><span class="googleLogin GoogleLogin JsOnly" tabindex="110" data-client-id="198773272284-b6tfk0c28bje81p774prrcrkq9jb3o44.apps.googleusercontent.com" data-redirect-url="/community/register/google?code=__CODE__&amp;csrf=hVMXbW_3rnrmq4Em" data-gapiattached="true"><span>Log in with Google</span></span></li>
+</ul>
+<div class="ctrlWrapper">
+<dl class="ctrlUnit">
+<dt><label for="LoginControl">Your name or email address:</label></dt>
+<dd><input type="text" name="login" id="LoginControl" class="textCtrl" tabindex="101"></dd>
+</dl>
+<dl class="ctrlUnit">
+<dt>
+<label for="ctrl_password">Do you already have an account?</label>
+</dt>
+<dd>
+<ul>
+<li><label for="ctrl_not_registered"><input type="radio" name="register" value="1" id="ctrl_not_registered" tabindex="105">
+No, create an account now.</label></li>
+<li><label for="ctrl_registered"><input type="radio" name="register" value="0" id="ctrl_registered" tabindex="105" checked="checked" class="Disabler">
+Yes, my password is:</label></li>
+<li id="ctrl_registered_Disabler">
+<input type="password" name="password" class="textCtrl" id="ctrl_password" tabindex="102">
+<div class="lostPassword"><a href="https://www.howtoforge.com/community/lost-password/" tabindex="106">Forgot your password?</a></div>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="ctrlUnit submitUnit">
+<dt></dt>
+<dd>
+<input type="submit" class="button primary" value="Log in" tabindex="104" data-loginphrase="Log in" data-signupphrase="Sign up">
+<label for="ctrl_remember" class="rememberPassword"><input type="checkbox" name="remember" value="1" id="ctrl_remember" tabindex="103"> Stay logged in</label>
+</dd>
+</dl>
+</div>
+<input type="hidden" name="cookie_check" value="1">
+<input type="hidden" name="redirect" value="/community/">
+<input type="hidden" name="_xfToken" value="">
+</form></div>
+</div>
+</div>
+<header>
+<div id="header">
+<div id="logoBlock">
+<div class="pageWidth">
+<div class="pageContent">
+<div id="logo"><a href="https://www.howtoforge.com/">
+<span></span>
+<img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/howtoforge_logo_trans.gif" alt="Howtoforge" style="margin-left:20px;">
+</a></div>
+<span class="helper"></span>
+<div class="langSwitch">
+<b><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/gb.png" alt="HowtoForge - Linux Tutorials in English"> English</b> | <a href="https://www.howtoforge.de/" title="HowtoForge.de - Linux Tutorials auf Deutsch"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/de.png" alt="HowtoForge.de - Linux Tutorials auf Deutsch"> Deutsch</a>
+</div>
+</div>
+</div>
+</div>
+<div id="navigation" class="pageWidth withSearch">
+<div class="pageContent">
+<nav>
+<div class="navTabs">
+<ul class="publicTabs">
+ 
+<li class="navTab forums selected">
+<a href="https://www.howtoforge.com/" class="navLink">Tutorials</a>
+<div class="tabLinks forumsTabLinks">
+<ul class="secondaryContent blockLinksList">
+<li><a href="https://www.howtoforge.com/search/">Tutorial search</a></li>
+</ul>
+</div>
+</li>
+<li class="navTab forums PopupClosed">
+<a href="https://www.howtoforge.com/tutorials/" class="navLink">Tags</a>
+</li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/community/" class="navLink">Forums</a></li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/contribute/" class="navLink">Contribute</a></li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/subscription/" class="navLink">Subscribe</a></li>
+<li class="navTab forums PopupClosed"><a href="http://www.ispconfig.org/" class="navLink">ISPConfig</a></li>
+<li class="navTab forums PopupClosed"><a href="http://www.lxer.com/" class="navLink">News</a></li>
+</ul>
+</div>
+<span class="helper"></span>
+</nav>
+</div>
+</div>
+<div id="searchBar" class="pageWidth">
+<span id="QuickSearchPlaceholder" title=" Search..."> Search</span>
+<fieldset id="QuickSearch">
+<form action="https://www.howtoforge.com/" method="post" class="formPopup">
+<div class="primaryControls">
+ 
+<input type="search" name="q" value="" class="textCtrl" placeholder="Search..." results="0" title="Enter your search and hit enter..." id="QuickSearchQuery">
+ 
+</div>
+<input type="hidden" name="_xfToken" value="">
+</form>
+</fieldset>
+</div>
+</div>
+</header>
+<div id="content" class="forum_list">
+<div class="pageWidth">
+<div class="pageContent">
+ 
+<div class="mainContainer">
+<div class="mainContent">
+ 
+<div class="breadBoxTop">
+<nav>
+<fieldset class="breadcrumb">
+<span class="crumbs">
+<span class="crust homeCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Tutorials</span></a>
+<span class="arrow"><span></span></span>
+</span>
+<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" class="crumb" rel="up" itemprop="url"><span itemprop="title">How to Install Jenkins Automation Server with Apache on Ubuntu 16.04</span></a>
+<span class="arrow"><span>&gt;</span></span>
+</span>
+</span>
+</fieldset>
+</nav>
+</div>
+ 
+<div id="htfContentPage">
+<h1>How to Install Jenkins Automation Server with Apache on Ubuntu 16.04</h1>
+ 
+<div class="contributeEdit" style="float:right; width:450px; max-width:100%;">
+ 
+<div id="tocContainer">
+<h3>On this page</h3>
+<ol class="toc">
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#prerequisite">Prerequisite</a></li>
+</ol>
+
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-install-java-openjdk-">Step 1 - Install Java OpenJDK 7</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-install-jenkins">Step 2 - Install Jenkins</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-install-and-configure-apache-as-reverse-proxy-for-jenkins">Step 3 - Install and Configure Apache as Reverse Proxy for Jenkins</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-configure-jenkins">Step 4 - Configure Jenkins</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-jenkins-security">Step 5 - Jenkins Security</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#step-testing-a-simple-automation-job">Step 6 - Testing a simple automation job</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#reference">Reference</a></li>
+
+</div>
+</div>
+<p>Jenkins is an automation server forked from the Hudson project. Jenkins is a server based application running in a Java servlet container, it has support for many SCM (Source Control Management) software systems including Git, SVN, and Mercurial. Jenkins provides hundreds of plugins to automate your project. Jenkins created by Kohsuke Kawaguchi, first released in 2011 under MIT License, and it's free software.</p>
+<p>In this tutorial, I will show you how to install the latest Jenkins version on Ubuntu Server 16.04. We will run Jenkins on our own domain name, and we will to install and configure Jenkins to run under the apache web server with the reverse proxy for Jenkins.</p>
+<p></p>
+<h3 id="prerequisite">Prerequisite</h3>
+<ul>
+<li>Ubuntu Server 16.04 - 64bit</li>
+<li>Root Privileges</li>
+</ul>
+<p></p><div style="width:336px;float:left; margin: 10px 15px 10px 0px;background-color:white;"> 
+ 
+<script type="text/javascript">
+GA_googleFillSlot('howtoforge_com_article_rectangle_a_300x250');
+</script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ads"></script><div id="google_ads_div_howtoforge_com_article_rectangle_a_300x250_ad_wrapper">
+<div id="google_ads_div_howtoforge_com_article_rectangle_a_300x250_ad_container" style="display:inline-block;">
+<ins style="width: 300px; height: 250px; display: inline-table; position: relative; border: 0px;"><ins style="width: 300px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_howtoforge_com_article_rectangle_a_300x250" name="google_ads_iframe_howtoforge_com_article_rectangle_a_300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource.html"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_howtoforge_com_article_rectangle_a_300x250_ad_container" ,"howtoforge_com_article_rectangle_a_300x250");</script>
+ </div>
+<h2 id="step-install-java-openjdk-">Step 1 - Install Java OpenJDK 7</h2>
+<p>Jenkins is based on Java, so we need to install Java OpenJDK version 7 on the server. In this step, we will install Java 7 from a&nbsp;PPA repository which we will add first.</p>
+<p>By default, Ubuntu 16.04 ships without the python-software-properties package for managing PPA repositories, so we must install this package first. Install python-software-properties with apt command.</p>
+<p class="command">apt-get install python-software-properties</p>
+<p>Next, add Java PPA repository to the server.</p>
+<p class="command">add-apt-repository ppa:openjdk-r/ppa<br>Just Press ENTER</p>
+<p>Update the Ubuntu repository and install the Java OpenJDK with apt command.</p>
+<p class="command">apt-get update<br>apt-get install openjdk-7-jdk</p>
+<p>Verify the installation by typing the command below:</p>
+<p class="command">java -version</p>
+<p>and you will get the Java version that is installed on the server.</p>
+<p><a class="fancybox" id="img-1" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/1.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/1.png" alt="Install Java 7 openJDK on Ubuntu 16.04" width="463" height="211"></a></p>
+<p></p>
+<h2 id="step-install-jenkins">Step 2 - Install Jenkins</h2>
+<p>Jenkins provides an Ubuntu repository for the installation packages and we will install Jenkins from this repository.</p>
+<p>Add Jenkins key and repository to the system with the command below.</p>
+<p class="command">wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -<br>echo 'deb https://pkg.jenkins.io/debian-stable binary/' | tee -a /etc/apt/sources.list</p>
+<p>Update the repository and install Jenkins.</p>
+<p class="command">apt-get update<br>apt-get install jenkins</p>
+<p>When the installation is done, start Jenkins with this systemctl command.</p>
+<p class="command">systemctl start jenkins</p>
+<p>Verify that Jenkins is running by checking the default port used by Jenkins (port 8080). I will check it with the&nbsp;netstat command below:</p>
+<p class="command">netstat -plntu</p>
+<p>Jenkins is installed and running on port 8080.</p>
+<p><a class="fancybox" id="img-2" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/2.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/2.png" alt="Jenkins has been installed on port 8080" width="550" height="175"></a></p>
+<p></p>
+<h2 id="step-install-and-configure-apache-as-reverse-proxy-for-jenkins">Step 3 - Install and Configure Apache as Reverse Proxy for Jenkins</h2>
+<p>In this tutorial we will run Jenkins behind an apache web server, we will configure apache as the reverse proxy for Jenkins. First I will install apache and enable some require modules, and then I'll create the virtual host file with domain name my.jenkins.id for Jenkins. Please use your own domain name here and replace it in all config files wherever it appears.</p>
+<p>Install apache2 web server from Ubuntu repository.</p>
+<p class="command">apt-get install apache2</p>
+<p>When the&nbsp;installation is done, enable the proxy and proxy_http modules so we can configure apache as frontend server/reverse proxy for Jenkins.</p>
+<p class="command">a2enmod proxy<br>a2enmod proxy_http</p>
+<p>Next, create a new virtual host file in the sites-available directory.</p>
+<p class="command">cd /etc/apache2/sites-available/<br>vim jenkins.conf</p>
+<p>Paste virtual host configuration below.</p>
+<pre>&lt;Virtualhost *:80&gt;<br>&nbsp;&nbsp;&nbsp; ServerName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; my.jenkins.id<br>&nbsp;&nbsp;&nbsp; ProxyRequests&nbsp;&nbsp;&nbsp;&nbsp; Off<br>&nbsp;&nbsp;&nbsp; ProxyPreserveHost On<br>&nbsp;&nbsp;&nbsp; AllowEncodedSlashes NoDecode<br> <br>&nbsp;&nbsp;&nbsp; &lt;Proxy http://localhost:8080/*&gt;<br>&nbsp;&nbsp;&nbsp; &nbsp; Order deny,allow<br>&nbsp;&nbsp;&nbsp; &nbsp; Allow from all<br>&nbsp;&nbsp;&nbsp; &lt;/Proxy&gt;<br> <br>&nbsp;&nbsp;&nbsp; ProxyPass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; http://localhost:8080/ nocanon<br>&nbsp;&nbsp;&nbsp; ProxyPassReverse&nbsp; /&nbsp; http://localhost:8080/<br>&nbsp;&nbsp;&nbsp; ProxyPassReverse&nbsp; /&nbsp; http://my.jenkins.id/<br>&lt;/Virtualhost&gt;</pre>
+<p>Save the file. Then activate the Jenkins virtual host with the a2ensite command.</p>
+<p class="command">a2ensite jenkins</p>
+<p>Restart Apache and Jenkins.</p>
+<p class="command">systemctl restart apache2<br>systemctl restart jenkins</p>
+<p>Check that port 80 and 8000 are in use by Jenkins and Apache.</p>
+<p class="command">netstat -plntu</p>
+<p><a class="fancybox" id="img-3" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/3.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/3.png" alt="Check that Apache and Jenkins are running" width="550" height="177"></a></p>
+<p></p>
+<h2 id="step-configure-jenkins">Step 4 - Configure Jenkins</h2>
+<p>Jenkins is running on the domain name 'my.jenkins.id'. Open your web browser and type in the URL. You will get the screen that requests you to enter the initial admin password. A&nbsp;password has been generated by Jenkins already, so we just need to show and copy the results to the password box.</p>
+<p>Show initial admin password Jenkins with cat command.</p>
+<p class="command">cat /var/lib/jenkins/secrets/initialAdminPassword<br> <br>a1789d1561bf413c938122c599cf65c9</p>
+<p><a class="fancybox" id="img-4" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/4.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/4.png" alt="Get the Jenkins admin password" width="513" height="64"></a></p>
+<p>Paste the results to the screen and click '<strong>Continue</strong>'.</p>
+<p><a class="fancybox" id="img-5" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/5.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/5.png" alt="Jenkins Installation and Configuration" width="550" height="365"></a></p>
+<p>Now we should install some plugins in Jenkins to get a good foundation for later use. Choose '<strong>Install Suggested Plugins</strong>', click on it.</p>
+<p><a class="fancybox" id="img-6" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/6.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/6.png" alt="Install jenkins Plugins" width="550" height="359"></a></p>
+<p>Jenkins plugins installations in progress.</p>
+<p><a class="fancybox" id="img-7" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/7.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/7.png" alt="Jenkins plugins get installed" width="550" height="362"></a></p>
+<p>After plugin installation, we have to create a new admin password. Type in your admin username, password, email etc. and click on '<strong>Save and Finish</strong>'.</p>
+<p><a class="fancybox" id="img-8" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/8.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/8.png" alt="Create Jenkins admin account" width="550" height="360"></a></p>
+<p>Click start and start using Jenkins. You will be redirected to the Jenkins admin dashboard.</p><div style="width:336px;float:left; margin: 10px 15px 10px 0px;background-color:white;"> 
+ 
+<script type="text/javascript">
+GA_googleFillSlot('howtoforge_com_article_rectangle_b_300x250');
+</script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ads(1)"></script><div id="google_ads_div_howtoforge_com_article_rectangle_b_300x250_ad_wrapper">
+<div id="google_ads_div_howtoforge_com_article_rectangle_b_300x250_ad_container" style="display:inline-block;"><script>(function(){var g=this,l=function(a,b){var c=a.split("."),d=g;c[0]in d||!d.execScript||d.execScript("var "+c[0]);for(var e;c.length&&(e=c.shift());)c.length||void 0===b?d=d[e]?d[e]:d[e]={}:d[e]=b},m=function(a,b,c){return a.call.apply(a.bind,arguments)},n=function(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}},p=function(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?m:n;return p.apply(null,arguments)},q=Date.now||function(){return+new Date};var r=document,s=window;var t=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(null,a[c],c,a)},w=function(a,b){a.google_image_requests||(a.google_image_requests=[]);var c=a.document.createElement("img");c.src=b;a.google_image_requests.push(c)};var x=function(a){return{visible:1,hidden:2,prerender:3,preview:4}[a.webkitVisibilityState||a.mozVisibilityState||a.visibilityState||""]||0},y=function(a){var b;a.mozVisibilityState?b="mozvisibilitychange":a.webkitVisibilityState?b="webkitvisibilitychange":a.visibilityState&&(b="visibilitychange");return b};var C=function(){this.g=r;this.k=s;this.j=!1;this.i=null;this.h=[];this.o={};if(z)this.i=q();else if(3==x(this.g)){this.i=q();var a=p(this.q,this);A&&(a=A("di::vch",a));this.p=a;var b=this.g,c=y(this.g);b.addEventListener?b.addEventListener(c,a,!1):b.attachEvent&&b.attachEvent("on"+c,a)}else B(this)},A;C.m=function(){return C.n?C.n:C.n=new C};var D=/^([^:]+:\/\/[^/]+)/m,G=/^\d*,(.+)$/m,z=!1,B=function(a){if(!a.j){a.j=!0;for(var b=0;b<a.h.length;++b)a.l.apply(a,a.h[b]);a.h=[]}};C.prototype.s=function(a,b){var c=b.target.u();(c=G.exec(c))&&(this.o[a]=c[1])};C.prototype.l=function(a,b){this.k.rvdt=this.i?q()-this.i:0;var c;if(c=this.t)t:{try{var d=D.exec(this.k.location.href),e=D.exec(a);if(d&&e&&d[1]==e[1]&&b){var f=p(this.s,this,b);this.t(a,f);c=!0;break t}}catch(u){}c=!1}c||w(this.k,a)};C.prototype.q=function(){if(3!=x(this.g)){B(this);var a=this.g,b=y(this.g),c=this.p;a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)}};var H=/^true$/.test("")?!0:!1;var I={},J=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(e){b=c}}return b},M=function(a,b,c,d){var e=K,f,u=!0;try{f=b()}catch(h){try{var N=J(h);b="";h.fileName&&(b=h.fileName);var E=-1;h.lineNumber&&(E=h.lineNumber);var v;t:{try{v=c?c():"";break t}catch(S){}v=""}u=e(a,N,b,E,v)}catch(k){try{var O=J(k);a="";k.fileName&&(a=k.fileName);c=-1;k.lineNumber&&(c=k.lineNumber);K("pAR",O,a,c,void 0,void 0)}catch(F){L({context:"mRE",msg:F.toString()+"\n"+(F.stack||"")},void 0)}}if(!u)throw h;}finally{if(d)try{d()}catch(T){}}return f},K=function(a,b,c,d,e,f){a={context:a,msg:b.substring(0,512),eid:e&&e.substring(0,40),file:c,line:d.toString(),url:r.URL.substring(0,512),ref:r.referrer.substring(0,512)};P(a);L(a,f);return!0},L=function(a,b){try{if(Math.random()<(b||.01)){var c="/pagead/gen_204?id=jserror"+Q(a),d="http"+("https:"==s.location.protocol?"s":"")+"://pagead2.googlesyndication.com"+c,d=d.substring(0,2E3);w(s,d)}}catch(e){}},P=function(a){var b=a||{};t(I,function(a,d){b[d]=s[a]})},R=function(a,b,c,d,e){return function(){var f=arguments;return M(a,function(){return b.apply(c,f)},d,e)}},Q=function(a){var b="";t(a,function(a,d){if(0===a||a)b+="&"+d+"="+("function"==typeof encodeURIComponent?encodeURIComponent(a):escape(a))});return b};A=function(a,b,c,d){return R(a,b,void 0,c,d)};z=H;l("vu",R("vu",function(a,b){var c=a.replace("&amp;","&"),d=/(google|doubleclick).*\/pagead\/adview/.test(c),e=C.m();if(d){d="&vis="+x(e.g);b&&(d+="&ve=1");var f=c.indexOf("&adurl"),c=-1==f?c+d:c.substring(0,f)+d+c.substring(f)}e.j?e.l(c,b):e.h.push([c,b])}));l("vv",R("vv",function(){z&&B(C.m())}));})();</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjssoiufZ1apmG7VEsg-tkl_J4DpOhvM-jf97Diz5UtHGohUatAlbKYYrXtid50w5BJRDfWOMHPzU-_IYtpECN91eqEaE9X7VEWAKLIk6tZ9FSdRogYUx4SiVkZIpFJ_vewlUpRxB4d22jC-bNZDtFuU5Qzp4vtI-kpROebc27BxQzL5tI4IrPwrXs_zO3D-YqqezxHHrMkPkCGMP3zDnsAX-HG3rIrw8adbMPHprXHej4I7iFZrnj4u1QQr8BSFoxTiRVlZ2R966wMmlD88t-j0\x26sig\x3dCg0ArKJSzIIhofC63x0PEAE\x26urlfix\x3d1\x26adurl\x3d")</script><!-- 300x250 BTF -->            
+                <script type="text/javascript">
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                    (function() {
+                      var gads = document.createElement("script");
+                      gads.async = true;
+                      gads.type = "text/javascript";
+                      var useSSL = "https:" == document.location.protocol;
+                      gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+                      var node =document.getElementsByTagName("script")[0];
+                      node.parentNode.insertBefore(gads, node);
+                     })();
+                </script>
+                
+                
+                <div id="div-gpt-ad-1904646143453-3" data-google-query-id="CJ-G36P-9tICFRAllgod7pgHSg">
+                    <script type="text/javascript">
+                       googletag.cmd.push(function() {
+                         googletag.defineSlot("/8456/IDG.Howtoforge(English).com_Homepage", [300,250],"div-gpt-ad-1904646143453-3")
+                           .addService(googletag.pubads())
+                           .setTargeting("pos", "BTF")
+                           .setTargeting("URL", encodeURIComponent(window.location));
+                         googletag.enableServices();
+                         googletag.display("div-gpt-ad-1904646143453-3");
+                       });
+                    </script> 
+                <div id="google_ads_iframe_/8456/IDG.Howtoforge(English).com_Homepage_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/container.html" id="google_ads_iframe_/8456/IDG.Howtoforge(English).com_Homepage_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+            <!-- END 300x250 BTF -->
+</div>
+</div>
+
+ </div>
+<p><a class="fancybox" id="img-9" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/9.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/9.png" alt="Get redirected to the admin dashboard" width="550" height="364"></a></p>
+<p>Jenkins installation and Configuration finished successfully</p>
+<p><a class="fancybox" id="img-10" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/10.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/10.png" alt="The Jenkins admin dashboard" width="550" height="314"></a></p>
+<p></p>
+<h2 id="step-jenkins-security">Step 5 - Jenkins Security</h2>
+<p>From the Jenkins admin dashboard, we need to configure the standard security settings for Jenkins, click on '<strong>Manage Jenkins</strong>' and then '<strong>Configure Global Security</strong>'.</p>
+<p><a class="fancybox" id="img-11" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/11.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/11.png" alt="Jenkins Global Security Settings" width="550" height="307"></a></p>
+<p>Jenkins provides several authorization methods in the '<strong>Access Control</strong>' section. I select '<strong>Matrix-based Security</strong>' to be able to control all user privileges. Enable the admin user at the box '<strong>User/Group</strong>' and click <strong>add</strong>. Give the admin all privileges by <strong>checking all options</strong>, and give the anonymous just read permissions. Now Click '<strong>Save</strong>'.</p>
+<p><a class="fancybox" id="img-12" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/12.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/12.png" alt="Configure Jenkins Permissions" width="550" height="315"></a></p>
+<p>You will be redirected to the dashboard, and if there is login option, just type your admin user and password.</p>
+<p></p>
+<h2 id="step-testing-a-simple-automation-job">Step 6 - Testing a simple automation job</h2>
+<p>In this section, I just want to test a simple job for the Jenkins server. I will create a simple job for testing Jenkins and to find out the server load with the top command.</p>
+<p>From the Jenkins admin dashboard, click '<strong>Create New Job</strong>'.</p>
+<p><a class="fancybox" id="img-13" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/13.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/13.png" alt="Create a new Job in Jenkins" width="550" height="316"></a></p>
+<p>Enter the job name, I'll use 'Checking System' here, select '<strong>Freestyle Project</strong>' and click '<strong>OK</strong>'.</p>
+<p><a class="fancybox" id="img-14" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/14.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/14.png" alt="Configure new Jenkins Job" width="550" height="314"></a></p>
+<p>Go to the '<strong>Build</strong>' tab. On the '<strong>Add build step</strong>', select the option '<strong>Execute shell</strong>'.</p>
+<p>Type in the command below into the box.</p>
+<p class="command">top -b -n 1 | head -n 5</p>
+<p>Click '<strong>Save</strong>'.</p>
+<p><a class="fancybox" id="img-15" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/15.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/15.png" alt="Start a Jenkins Job" width="550" height="275"></a></p>
+<p>Now you are on the job page of the job 'Project checking system'. Click '<strong>Build Now</strong>' to execute the job 'checking system'.</p>
+<p>After the job has been executed, you will see the '<strong>Build History</strong>', click on the first job to see the results.</p>
+<p>Here are the results from the job executed by Jenkins.</p>
+<p><a class="fancybox" id="img-16" href="https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/big/16.png"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/16.png" alt="Build and run a Jenkins Job" width="550" height="201"></a></p>
+<p></p>
+<p>Jenkins installation with Apache web server on Ubuntu 16.04 completed successfully.</p>
+<p></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins">https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins</a><a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins"></a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Standard+Security+Setup">https://wiki.jenkins-ci.org/display/JENKINS/Standard+Security+Setup</a><a href="https://wiki.jenkins-ci.org/display/JENKINS/Standard+Security+Setup"></a></li>
+<li><a href="http://jenkins-le-guide-complet.github.io/html/sect-first-steps-first-job.html">http://jenkins-le-guide-complet.github.io/html/sect-first-steps-first-job.html</a></li>
+</ul>
+<div style="height:30px; margin-top:20px;">
+<p style="text-align:right;"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/pdficon_small.png"> <a href="https://www.howtoforge.com/subscription/">view as pdf</a> | <img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/print.gif"> <a href="https://www.howtoforge.com/subscription/">print</a></p>
+</div>
+<div style="height:30px; margin-top:20px;">
+<div style="float:left;"><b>Share this page:</b></div>
+<div style="float:left; margin-left:10px;"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="en-US" data-url="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" data-via="howtoforgecom">Tweet</a> <a class="twitter-follow-button" href="https://twitter.com/howtoforgecom">Follow</a></div>
+<div style="float:left; margin-left:20px;"><fb:like href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" layout="button_count" action="recommend" font="trebuchet ms" colorscheme="light" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=&amp;color_scheme=light&amp;container_width=0&amp;font=trebuchet%20ms&amp;href=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Fhow-to-install-jenkins-with-apache-on-ubuntu-16-04%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey"><span style="vertical-align: bottom; width: 123px; height: 20px;"><iframe name="f10a7f0d72cc6c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/like.html" style="border: none; visibility: visible; width: 123px; height: 20px;" class=""></iframe></span></fb:like></div>
+<div style="float:left; margin-left:50px;"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1490628072578" name="I0_1490628072578" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></div>
+</div>
+</div>
+ 
+ 
+<div id="htfContentPagePaging">
+<h2>Suggested articles</h2>
+<script async="" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display: block; height: 446px;" data-ad-format="autorelaxed" data-ad-client="ca-pub-3043223216276099" data-ad-slot="8940054090" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:446px;margin:0;padding:0;position:relative;visibility:visible;width:892px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:446px;margin:0;padding:0;position:relative;visibility:visible;width:892px;background-color:transparent"><iframe width="892" height="446" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+ 
+<div id="htfContentPageComment">
+<a name="comments"></a>
+<h2>3 Comment(s)</h2>
+ 
+<div id="commentform">
+<div class="commentContainerHead" style="font-size:18px;">Add comment</div>
+<div class="commentContainer">
+<form method="post" action="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#comments">
+<input type="hidden" name="reply_to" id="reply-to-comment" value="0">
+<div id="commentFormDetail">
+<div style="width:48%; float:left; margin-right:3%">
+<label for="commentname">Name *</label>
+<input id="commentname" name="commentname" value="">
+</div>
+<div style="width:48%;float:left;">
+<label for="commentname">Email *</label>
+<input id="commentemail" name="commentemail" value="">
+</div>
+<div style="clear:both;"></div>
+</div>
+<div id="mceu_5" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_5-body" class="mce-container-body mce-stack-layout"><div id="mceu_6" class="mce-toolbar-grp mce-container mce-panel mce-first mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"><div id="mceu_6-body" class="mce-container-body mce-stack-layout"><div id="mceu_7" class="mce-container mce-toolbar mce-first mce-last mce-stack-layout-item" role="toolbar"><div id="mceu_7-body" class="mce-container-body mce-flow-layout"><div id="mceu_8" class="mce-container mce-first mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_8-body"><div id="mceu_0" class="mce-widget mce-btn mce-first mce-disabled" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Undo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_1" class="mce-widget mce-btn mce-last mce-disabled" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Redo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div></div></div><div id="mceu_9" class="mce-container mce-last mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_9-body"><div id="mceu_2" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_3" role="button" aria-label="Italic"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_4" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_4" role="button" aria-label="Insert/edit link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div></div></div></div></div></div></div><div id="mceu_10" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="commentedit_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 100px; display: block;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource(2).html"></iframe></div><div id="mceu_11" class="mce-statusbar mce-container mce-panel mce-last mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_11-body" class="mce-container-body mce-flow-layout"><div id="mceu_12" class="mce-path mce-first mce-flow-layout-item"><div role="button" class="mce-path-item mce-last" data-index="0" tabindex="-1" id="mceu_12-0" aria-level="0">p</div></div><div id="mceu_13" class="mce-last mce-flow-layout-item mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea id="commentedit" name="commentedit" style="width: auto; display: none;" aria-hidden="true"></textarea>
+<div>
+<div style="float:left;">
+<div class="g-recaptcha" data-sitekey="6LdX9fUSAAAAALWwVoPdeXScMSketz4npF-0QcQ1"><div style="width: 304px; height: 78px;"><div><iframe src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/anchor.html" title="recaptcha widget" width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/api.js">
+      </script>
+</div>
+<div style="margin-top:10px;margin-bottom:10px;">
+<input type="submit" name="submit" class="button primary" style="float:right;" value="Submit comment">
+</div>
+<div style="clear:both;"></div>
+</div>
+ 
+<script>
+	tinymce.init({
+		selector: "textarea#commentedit",
+		theme: "modern",
+		height: 100,
+		apply_source_formatting : true,
+		remove_linebreaks : false,
+		menubar : false,
+		/*auto_focus : "commentedit",*/
+		plugins: [
+		"link"
+		],
+		/*plugins: [
+			"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+			"save table contextmenu directionality emoticons template paste textcolor"
+		],*/
+		content_css: "https://www.howtoforge.com/themes/howtoforge/css/custom.css",
+		toolbar: "undo redo | bold italic link", 
+		/*style_formats: [
+			{title: 'Bold text', inline: 'b'},
+			{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+			{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+			{title: 'Example 1', inline: 'span', classes: 'example1'},
+			{title: 'Example 2', inline: 'span', classes: 'example2'},
+			{title: 'Table styles'},
+			{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+		]*/
+	}); 
+	</script>
+</form>
+</div>
+</div>
+ 
+<h3>Comments</h3>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>From:</b> david <b>at:</b> <i>2016-11-26 14:03:53</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#" data-comment="20593" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20593" class="commentContainer commentLevel0">
+<p></p><p>at step 5, i'm made a mistake with permissions, and i don't have any access to this page to modify permissions...</p>
+<p>Can i restore or modif it by shell command line ?</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel1">
+<div class="floatLeft"><b>From:</b> arul <b>at:</b> <i>2016-11-27 15:26:02</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#" data-comment="20597" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20597" class="commentContainer commentLevel1">
+<p></p><p>Yes you can..</p>
+<p>edit the config file:</p>
+<p>vim /var/lib/jenkins/config.xml</p>
+<p>Change value of the 'useSecurity' line from 'true' to 'false'.</p>
+<p>Restart jenkins</p>
+<p>cmiiw</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>From:</b> Russ <b>at:</b> <i>2017-03-03 16:14:04</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#" data-comment="21471" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21471" class="commentContainer commentLevel0">
+<p></p><p>I'd been out of Jenkins for over 3 years. Thanks for this excellent tutorial that gets me back in the seat so fast.</p><p></p>
+</div>
+</div>
+ 
+<div class="breadBoxBottom">
+<nav>
+<fieldset class="breadcrumb">
+<span class="crumbs">
+<span class="crust homeCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Tutorials</span></a>
+<span class="arrow"><span></span></span>
+</span>
+<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" class="crumb" rel="up" itemprop="url"><span itemprop="title">How to Install Jenkins Automation Server with Apache on Ubuntu 16.04</span></a>
+<span class="arrow"><span>&gt;</span></span>
+</span>
+</span>
+</fieldset>
+</nav>
+</div>
+<script>
+<!--
+
+$(document).on('click', 'a.reply-to', function(e) {
+	e.preventDefault();
+	
+	var self = $(this);
+	var cid = self.attr('data-comment');
+	console.log(cid);
+	if(!cid) return this;
+	
+	$('#commentform').insertAfter('#comment' + cid);
+	$('#reply-to-comment').val(cid);
+	/*tinyMCE.activeEditor.focus();*/
+	var textareaId = 'commentedit';
+	tinyMCE.get(textareaId).remove();
+	tinyMCE.execCommand("mceAddEditor", false, textareaId);
+	tinyMCE.activeEditor.focus();
+});
+//-->
+</script>
+<div style="margin-top:10px;margin-bottom:10px;text-align:center;">
+ 
+<center>
+ 
+ 
+<script type="text/javascript">
+GA_googleFillSlot("howtoforge_com_article_leaderboard_b_728x90");
+</script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ads(2)"></script><div id="google_ads_div_howtoforge_com_article_leaderboard_b_728x90_ad_wrapper">
+<div id="google_ads_div_howtoforge_com_article_leaderboard_b_728x90_ad_container" style="display:inline-block;"><script>(function(){var g=this,l=function(a,b){var c=a.split("."),d=g;c[0]in d||!d.execScript||d.execScript("var "+c[0]);for(var e;c.length&&(e=c.shift());)c.length||void 0===b?d=d[e]?d[e]:d[e]={}:d[e]=b},m=function(a,b,c){return a.call.apply(a.bind,arguments)},n=function(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}},p=function(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?m:n;return p.apply(null,arguments)},q=Date.now||function(){return+new Date};var r=document,s=window;var t=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(null,a[c],c,a)},w=function(a,b){a.google_image_requests||(a.google_image_requests=[]);var c=a.document.createElement("img");c.src=b;a.google_image_requests.push(c)};var x=function(a){return{visible:1,hidden:2,prerender:3,preview:4}[a.webkitVisibilityState||a.mozVisibilityState||a.visibilityState||""]||0},y=function(a){var b;a.mozVisibilityState?b="mozvisibilitychange":a.webkitVisibilityState?b="webkitvisibilitychange":a.visibilityState&&(b="visibilitychange");return b};var C=function(){this.g=r;this.k=s;this.j=!1;this.i=null;this.h=[];this.o={};if(z)this.i=q();else if(3==x(this.g)){this.i=q();var a=p(this.q,this);A&&(a=A("di::vch",a));this.p=a;var b=this.g,c=y(this.g);b.addEventListener?b.addEventListener(c,a,!1):b.attachEvent&&b.attachEvent("on"+c,a)}else B(this)},A;C.m=function(){return C.n?C.n:C.n=new C};var D=/^([^:]+:\/\/[^/]+)/m,G=/^\d*,(.+)$/m,z=!1,B=function(a){if(!a.j){a.j=!0;for(var b=0;b<a.h.length;++b)a.l.apply(a,a.h[b]);a.h=[]}};C.prototype.s=function(a,b){var c=b.target.u();(c=G.exec(c))&&(this.o[a]=c[1])};C.prototype.l=function(a,b){this.k.rvdt=this.i?q()-this.i:0;var c;if(c=this.t)t:{try{var d=D.exec(this.k.location.href),e=D.exec(a);if(d&&e&&d[1]==e[1]&&b){var f=p(this.s,this,b);this.t(a,f);c=!0;break t}}catch(u){}c=!1}c||w(this.k,a)};C.prototype.q=function(){if(3!=x(this.g)){B(this);var a=this.g,b=y(this.g),c=this.p;a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)}};var H=/^true$/.test("")?!0:!1;var I={},J=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(e){b=c}}return b},M=function(a,b,c,d){var e=K,f,u=!0;try{f=b()}catch(h){try{var N=J(h);b="";h.fileName&&(b=h.fileName);var E=-1;h.lineNumber&&(E=h.lineNumber);var v;t:{try{v=c?c():"";break t}catch(S){}v=""}u=e(a,N,b,E,v)}catch(k){try{var O=J(k);a="";k.fileName&&(a=k.fileName);c=-1;k.lineNumber&&(c=k.lineNumber);K("pAR",O,a,c,void 0,void 0)}catch(F){L({context:"mRE",msg:F.toString()+"\n"+(F.stack||"")},void 0)}}if(!u)throw h;}finally{if(d)try{d()}catch(T){}}return f},K=function(a,b,c,d,e,f){a={context:a,msg:b.substring(0,512),eid:e&&e.substring(0,40),file:c,line:d.toString(),url:r.URL.substring(0,512),ref:r.referrer.substring(0,512)};P(a);L(a,f);return!0},L=function(a,b){try{if(Math.random()<(b||.01)){var c="/pagead/gen_204?id=jserror"+Q(a),d="http"+("https:"==s.location.protocol?"s":"")+"://pagead2.googlesyndication.com"+c,d=d.substring(0,2E3);w(s,d)}}catch(e){}},P=function(a){var b=a||{};t(I,function(a,d){b[d]=s[a]})},R=function(a,b,c,d,e){return function(){var f=arguments;return M(a,function(){return b.apply(c,f)},d,e)}},Q=function(a){var b="";t(a,function(a,d){if(0===a||a)b+="&"+d+"="+("function"==typeof encodeURIComponent?encodeURIComponent(a):escape(a))});return b};A=function(a,b,c,d){return R(a,b,void 0,c,d)};z=H;l("vu",R("vu",function(a,b){var c=a.replace("&amp;","&"),d=/(google|doubleclick).*\/pagead\/adview/.test(c),e=C.m();if(d){d="&vis="+x(e.g);b&&(d+="&ve=1");var f=c.indexOf("&adurl"),c=-1==f?c+d:c.substring(0,f)+d+c.substring(f)}e.j?e.l(c,b):e.h.push([c,b])}));l("vv",R("vv",function(){z&&B(C.m())}));})();</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjstazSENXIeankssrZ2i8yzVjf468rf0XiSc9Rsctp67yTO1wuLJa4sWvOhlY4GLyeI8NJc4TcBMdcpzKiCiei6pk466u11LnTs68U-cDZv47fYhGzp2rhVSAOfWqbCgpBnABoqpkqktIdF0Bhp4EuAjw_cyvx39M0ttZpfcPC49DBrWYz0c0cdqEMyvf6eODpcReiFTJsEhe8aRsxmr8bEfzAt3I4StJ1IQKVdVTLGmqqa9fT_znwjX_Pk9lCBTjeXKfI0kapGqmukWVzPR\x26sig\x3dCg0ArKJSzJNRXDEorbsWEAE\x26urlfix\x3d1\x26adurl\x3d")</script><div>
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/gpt.js">
+    googletag.pubads().definePassback('/8095840/.2_7098.3_howtoforge.com_tier1', [728, 90]).display();
+</script><script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ads(3)" id="sae-script-1"></script><div id="gpt_unit_/8095840/.2_7098.3_howtoforge.com_tier1_1_ad_container"><script>(function(){var g=this,l=function(a,b){var c=a.split("."),d=g;c[0]in d||!d.execScript||d.execScript("var "+c[0]);for(var e;c.length&&(e=c.shift());)c.length||void 0===b?d=d[e]?d[e]:d[e]={}:d[e]=b},m=function(a,b,c){return a.call.apply(a.bind,arguments)},n=function(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}},p=function(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?m:n;return p.apply(null,arguments)},q=Date.now||function(){return+new Date};var r=document,s=window;var t=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(null,a[c],c,a)},w=function(a,b){a.google_image_requests||(a.google_image_requests=[]);var c=a.document.createElement("img");c.src=b;a.google_image_requests.push(c)};var x=function(a){return{visible:1,hidden:2,prerender:3,preview:4}[a.webkitVisibilityState||a.mozVisibilityState||a.visibilityState||""]||0},y=function(a){var b;a.mozVisibilityState?b="mozvisibilitychange":a.webkitVisibilityState?b="webkitvisibilitychange":a.visibilityState&&(b="visibilitychange");return b};var C=function(){this.g=r;this.k=s;this.j=!1;this.i=null;this.h=[];this.o={};if(z)this.i=q();else if(3==x(this.g)){this.i=q();var a=p(this.q,this);A&&(a=A("di::vch",a));this.p=a;var b=this.g,c=y(this.g);b.addEventListener?b.addEventListener(c,a,!1):b.attachEvent&&b.attachEvent("on"+c,a)}else B(this)},A;C.m=function(){return C.n?C.n:C.n=new C};var D=/^([^:]+:\/\/[^/]+)/m,G=/^\d*,(.+)$/m,z=!1,B=function(a){if(!a.j){a.j=!0;for(var b=0;b<a.h.length;++b)a.l.apply(a,a.h[b]);a.h=[]}};C.prototype.s=function(a,b){var c=b.target.u();(c=G.exec(c))&&(this.o[a]=c[1])};C.prototype.l=function(a,b){this.k.rvdt=this.i?q()-this.i:0;var c;if(c=this.t)t:{try{var d=D.exec(this.k.location.href),e=D.exec(a);if(d&&e&&d[1]==e[1]&&b){var f=p(this.s,this,b);this.t(a,f);c=!0;break t}}catch(u){}c=!1}c||w(this.k,a)};C.prototype.q=function(){if(3!=x(this.g)){B(this);var a=this.g,b=y(this.g),c=this.p;a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)}};var H=/^true$/.test("")?!0:!1;var I={},J=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(e){b=c}}return b},M=function(a,b,c,d){var e=K,f,u=!0;try{f=b()}catch(h){try{var N=J(h);b="";h.fileName&&(b=h.fileName);var E=-1;h.lineNumber&&(E=h.lineNumber);var v;t:{try{v=c?c():"";break t}catch(S){}v=""}u=e(a,N,b,E,v)}catch(k){try{var O=J(k);a="";k.fileName&&(a=k.fileName);c=-1;k.lineNumber&&(c=k.lineNumber);K("pAR",O,a,c,void 0,void 0)}catch(F){L({context:"mRE",msg:F.toString()+"\n"+(F.stack||"")},void 0)}}if(!u)throw h;}finally{if(d)try{d()}catch(T){}}return f},K=function(a,b,c,d,e,f){a={context:a,msg:b.substring(0,512),eid:e&&e.substring(0,40),file:c,line:d.toString(),url:r.URL.substring(0,512),ref:r.referrer.substring(0,512)};P(a);L(a,f);return!0},L=function(a,b){try{if(Math.random()<(b||.01)){var c="/pagead/gen_204?id=jserror"+Q(a),d="http"+("https:"==s.location.protocol?"s":"")+"://pagead2.googlesyndication.com"+c,d=d.substring(0,2E3);w(s,d)}}catch(e){}},P=function(a){var b=a||{};t(I,function(a,d){b[d]=s[a]})},R=function(a,b,c,d,e){return function(){var f=arguments;return M(a,function(){return b.apply(c,f)},d,e)}},Q=function(a){var b="";t(a,function(a,d){if(0===a||a)b+="&"+d+"="+("function"==typeof encodeURIComponent?encodeURIComponent(a):escape(a))});return b};A=function(a,b,c,d){return R(a,b,void 0,c,d)};z=H;l("vu",R("vu",function(a,b){var c=a.replace("&amp;","&"),d=/(google|doubleclick).*\/pagead\/adview/.test(c),e=C.m();if(d){d="&vis="+x(e.g);b&&(d+="&ve=1");var f=c.indexOf("&adurl"),c=-1==f?c+d:c.substring(0,f)+d+c.substring(f)}e.j?e.l(c,b):e.h.push([c,b])}));l("vv",R("vv",function(){z&&B(C.m())}));})();</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjssRs5zV7FRM3TF7SEef4KvGyssVbcYMo9kxdhksiqgTzW5wMkVc53kpMoObwWgX3IDPlFmbGyNk7RmfbRV4-0XGkEmP6d_5DkUacM8jkkedXoE-Md8uO99b1kSDHmWt9-vqlkPdZuZxnRh_RMn7bttykOsSJzH6Pw4JboR_62r24fbLVPg0z0ylaOU4ie1yj6P83vHAavDGrD8Z5RrYeaKfXSzTF4iUjV4copNp8_FuKO2OQJ7uE7-ASuEXTNhsjmYS6d30xpjlFA\x26sig\x3dCg0ArKJSzF5W8mm8S4deEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/gpt.js">
+  googletag.pubads().definePassback('/8095840/.2_7098.3_howtoforge.com_tier2', [728, 90]).display();
+</script><script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/ads(4)" id="sae-script-2"></script><div id="gpt_unit_/8095840/.2_7098.3_howtoforge.com_tier2_2_ad_container"><script>(function(){var g=this,l=function(a,b){var c=a.split("."),d=g;c[0]in d||!d.execScript||d.execScript("var "+c[0]);for(var e;c.length&&(e=c.shift());)c.length||void 0===b?d=d[e]?d[e]:d[e]={}:d[e]=b},m=function(a,b,c){return a.call.apply(a.bind,arguments)},n=function(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}},p=function(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?m:n;return p.apply(null,arguments)},q=Date.now||function(){return+new Date};var r=document,s=window;var t=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(null,a[c],c,a)},w=function(a,b){a.google_image_requests||(a.google_image_requests=[]);var c=a.document.createElement("img");c.src=b;a.google_image_requests.push(c)};var x=function(a){return{visible:1,hidden:2,prerender:3,preview:4}[a.webkitVisibilityState||a.mozVisibilityState||a.visibilityState||""]||0},y=function(a){var b;a.mozVisibilityState?b="mozvisibilitychange":a.webkitVisibilityState?b="webkitvisibilitychange":a.visibilityState&&(b="visibilitychange");return b};var C=function(){this.g=r;this.k=s;this.j=!1;this.i=null;this.h=[];this.o={};if(z)this.i=q();else if(3==x(this.g)){this.i=q();var a=p(this.q,this);A&&(a=A("di::vch",a));this.p=a;var b=this.g,c=y(this.g);b.addEventListener?b.addEventListener(c,a,!1):b.attachEvent&&b.attachEvent("on"+c,a)}else B(this)},A;C.m=function(){return C.n?C.n:C.n=new C};var D=/^([^:]+:\/\/[^/]+)/m,G=/^\d*,(.+)$/m,z=!1,B=function(a){if(!a.j){a.j=!0;for(var b=0;b<a.h.length;++b)a.l.apply(a,a.h[b]);a.h=[]}};C.prototype.s=function(a,b){var c=b.target.u();(c=G.exec(c))&&(this.o[a]=c[1])};C.prototype.l=function(a,b){this.k.rvdt=this.i?q()-this.i:0;var c;if(c=this.t)t:{try{var d=D.exec(this.k.location.href),e=D.exec(a);if(d&&e&&d[1]==e[1]&&b){var f=p(this.s,this,b);this.t(a,f);c=!0;break t}}catch(u){}c=!1}c||w(this.k,a)};C.prototype.q=function(){if(3!=x(this.g)){B(this);var a=this.g,b=y(this.g),c=this.p;a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)}};var H=/^true$/.test("")?!0:!1;var I={},J=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(e){b=c}}return b},M=function(a,b,c,d){var e=K,f,u=!0;try{f=b()}catch(h){try{var N=J(h);b="";h.fileName&&(b=h.fileName);var E=-1;h.lineNumber&&(E=h.lineNumber);var v;t:{try{v=c?c():"";break t}catch(S){}v=""}u=e(a,N,b,E,v)}catch(k){try{var O=J(k);a="";k.fileName&&(a=k.fileName);c=-1;k.lineNumber&&(c=k.lineNumber);K("pAR",O,a,c,void 0,void 0)}catch(F){L({context:"mRE",msg:F.toString()+"\n"+(F.stack||"")},void 0)}}if(!u)throw h;}finally{if(d)try{d()}catch(T){}}return f},K=function(a,b,c,d,e,f){a={context:a,msg:b.substring(0,512),eid:e&&e.substring(0,40),file:c,line:d.toString(),url:r.URL.substring(0,512),ref:r.referrer.substring(0,512)};P(a);L(a,f);return!0},L=function(a,b){try{if(Math.random()<(b||.01)){var c="/pagead/gen_204?id=jserror"+Q(a),d="http"+("https:"==s.location.protocol?"s":"")+"://pagead2.googlesyndication.com"+c,d=d.substring(0,2E3);w(s,d)}}catch(e){}},P=function(a){var b=a||{};t(I,function(a,d){b[d]=s[a]})},R=function(a,b,c,d,e){return function(){var f=arguments;return M(a,function(){return b.apply(c,f)},d,e)}},Q=function(a){var b="";t(a,function(a,d){if(0===a||a)b+="&"+d+"="+("function"==typeof encodeURIComponent?encodeURIComponent(a):escape(a))});return b};A=function(a,b,c,d){return R(a,b,void 0,c,d)};z=H;l("vu",R("vu",function(a,b){var c=a.replace("&amp;","&"),d=/(google|doubleclick).*\/pagead\/adview/.test(c),e=C.m();if(d){d="&vis="+x(e.g);b&&(d+="&ve=1");var f=c.indexOf("&adurl"),c=-1==f?c+d:c.substring(0,f)+d+c.substring(f)}e.j?e.l(c,b):e.h.push([c,b])}));l("vv",R("vv",function(){z&&B(C.m())}));})();</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsvpwJfEzzVjo2qq4uozG5aI5-W2BDvlcF4X_NiyznyICjNiqcFqLNReyOn1Tgg7UADCchRC5_0MJggf6Xw5UQ9D4oCZq71sxd-oFh9W2vvxbkY-6sn7dhmQ0KpHIFb2n-QEd4MZr_buGjvm-JmE8diixB9lt-_pPgVfHYA562xmLchMPGMBEq2DVAYifSZzFLeIsO1zVaX9vuxy0D1b5OsWmV7tWW_u10JmRAZsJxxzZJhP9HRaEoAvYB3jzjfNBQHHAyBFIVxkKA\x26sig\x3dCg0ArKJSzJly7Fq7vjecEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/amzn_ads.js"></script>
+<script type="text/javascript">
+  try {
+    /* Slot size: 728x90 */ 
+    amznads.getAdForSlot('3137', 'b63059c7-117a-496c-9796-171eadcdfa98');
+  } catch(e) { /*ignore*/}
+</script><script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/getad"></script><script type="text/javascript">
+    google_ad_client = "ca-pub-3043223216276099";
+    google_ad_slot = "1445120496";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<!-- Howtoforge 728x90 PubGalaxy Passback -->
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource(3).html"></iframe></ins></ins><script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BIOJV5C3ZWJjgJ9Om9AWkgJhAAAAAABABOAHIAQnAAgLgAgDgBAGgBhY','',1325106299,true,'ud\x3d1\x26la\x3d0\x26',3,'CAASFeRoH9hqWWCODLWmHNcA1T_tsEBvkA','//pagead2.googlesyndication.com/activeview?avi\x3dBIOJV5C3ZWJjgJ9Om9AWkgJhAAAAAABABOAHIAQnAAgLgAgDgBAGgBhY\x26cid\x3dCAASFeRoH9hqWWCODLWmHNcA1T_tsEBvkA');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
+</div>
+<script src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BnWTF4y3ZWJmGM8eh9AWozZ3ICAAAAAAQATgByAEJwAIC4AIA4AQBoAYW','',1030248120,true,'ud\x3d1\x26la\x3d0\x26',3,'CAASFeRoJRDUzct3_XnsUljPHfLcb1UL1Q','//pagead2.googlesyndication.com/activeview?avi\x3dBnWTF4y3ZWJmGM8eh9AWozZ3ICAAAAAAQATgByAEJwAIC4AIA4AQBoAYW\x26cid\x3dCAASFeRoJRDUzct3_XnsUljPHfLcb1UL1Q');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
+</div>
+
+</div>
+</div>
+</div>
+
+ 
+</center>
+ </div>
+ 
+ 
+
+ 
+</div>
+</div>
+ 
+<aside>
+<div class="sidebar">
+<div class="section loginButton">
+<div class="secondaryContent">
+<label for="LoginControl" id="SignupButton"><a href="https://www.howtoforge.com/community/login/" class="inner">Sign up now!</a></label>
+</div>
+</div>
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-2">
+ 
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-5">
+<div class="section infoBlock sharePage">
+<div class="secondaryContent socialMediaIcon">
+<a href="https://twitter.com/howtoforgecom" target="_blank"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/twitter.png"></a>
+<a href="https://www.facebook.com/howtoforge" target="_blank"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/facebook.png"></a>
+<a href="https://plus.google.com/+howtoforge/posts" target="_blank"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/googleplus.png"></a>
+<a href="https://www.howtoforge.com/feed" target="_blank"><img src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/rss.png"></a>
+</div>
+</div>
+</div>
+<div class="section widget-group-no-name widget-container">
+<div class="secondaryContent widget WidgetFramework_WidgetRenderer_Stats" id="widget-3">
+<h3>Tutorial Info</h3>
+<div class="pairsJustified">
+<dl class="discussionCount">
+<dt>Author:</dt>
+<dd>Muhammad Arul</dd>
+</dl>
+<dl class="discussionCount">
+<dt>Published:</dt>
+<dd>Nov 25, 2016</dd>
+</dl>
+<dl class="discussionCount">
+<dt>Tags:</dt>
+<dd><a href="https://www.howtoforge.com/tutorials/linux/" rel="tag">linux</a>, <a href="https://www.howtoforge.com/tutorials/server/" rel="tag">server</a>, <a href="https://www.howtoforge.com/tutorials/ubuntu/" rel="tag">ubuntu</a></dd>
+</dl>
+</div>
+</div>
+</div>
+ 
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-5">
+<div class="section infoBlock sharePage">
+<div class="secondaryContent">
+<h3>Share This Page</h3>
+<div class="tweet shareControl">
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="en-US" data-url="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" data-via="howtoforgecom">Tweet</a> <a class="twitter-follow-button" data-show-screen-name="false" href="https://twitter.com/howtoforgecom">Follow</a>
+</div>
+<div class="facebookLike shareControl">
+<fb:like href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/" layout="button_count" action="recommend" font="trebuchet ms" colorscheme="light" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=&amp;color_scheme=light&amp;container_width=0&amp;font=trebuchet%20ms&amp;href=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Fhow-to-install-jenkins-with-apache-on-ubuntu-16-04%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey"><span style="vertical-align: bottom; width: 123px; height: 20px;"><iframe name="f39d11bff57194" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/like(1).html" style="border: none; visibility: visible; width: 123px; height: 20px;" class=""></iframe></span></fb:like>
+</div>
+<div class="plusone shareControl">
+<div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1490628072586" name="I1_1490628072586" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/fastbutton(1).html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+ 
+<script type="text/javascript">
+    google_ad_client = "ca-pub-3043223216276099";
+    google_ad_slot = "6709042890";
+    google_ad_width = 300;
+    google_ad_height = 600;
+</script>
+ 
+<script type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource(4).html"></iframe></ins></ins>
+ 
+ 
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer">
+<div class="pageWidth">
+<div class="pageContent">
+<div class="skin_branding"><a href="http://www.xenfocus.com/" rel="nofollow">Xenforo skin</a><span> by <a href="http://www.xenfocus.com/" rel="nofollow">Xenfocus</a></span></div>
+<ul class="footerLinks">
+<li><a href="https://www.howtoforge.com/community/misc/contact">Contact</a></li>
+<li><a href="https://www.howtoforge.com/community/help/">Help</a></li>
+<li><a href="https://www.howtoforge.com/imprint/">Imprint</a></li>
+<li><a href="https://www.howtoforge.com/" class="homeLink">Tutorials</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#navigation" class="topLink">Top</a></li>
+<li><a href="https://www.howtoforge.com/feed" rel="alternate" class="globalFeed" target="_blank" title="RSS-Feed for Howtoforge">RSS-Feed</a></li>
+</ul>
+<span class="helper"></span>
+</div>
+</div>
+</div>
+<div class="footerLegal">
+<div class="pageWidth">
+<div class="pageContent">
+<ul id="legal">
+<li><a href="https://www.howtoforge.com/community/help/terms">Terms</a></li>
+</ul>
+<div id="copyright"><a href="https://www.howtoforge.com/" class="concealed">Howtoforge <span>© projektfarm GmbH.</span></a></div>
+<span class="helper"></span>
+</div>
+</div>
+</div>
+</footer>
+<div style="height:100px;"></div>
+<script>
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1409831907,
+		today: 1409781600,
+		todayDow: 4
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(0, 0, 0)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"node_list":true,"node_category":true,"node_forum":true,"sidebar_share_page":true,"wf_default":true,"bbm_buttons":true,"login_bar":true,"twitter":true},
+	_cookieConfig: { path: "/", domain: "", prefix: "xf_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "/community/login/csrf-token-refresh",
+	_jsVersion: "303ae0ca"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+// Facebook Javascript SDK
+XenForo.Facebook.appId = "";
+XenForo.Facebook.forceInit = true;
+
+/*
+document.addEventListener('DOMContentLoaded', function(event) {
+  cookieChoices.showCookieConsentBar('Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden.',
+  'OK');
+});
+*/
+
+$(document).ready(function() {
+	$("a.fancybox").fancybox();
+});
+
+</script>
+<script async="" type="text/javascript" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/fancybar.js" id="_fancybar_js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2155872-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div style="background-color: #fff; border: 1px solid #ccc; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); position: absolute; left: 0px; top: -10000px; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: #fff; opacity: 0.05;  filter: alpha(opacity=5)"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/bframe.html" title="recaptcha challenge" frameborder="0" scrolling="no" name="yjtukxr3z3tw" style="width: 100%; height: 100%;"></iframe></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/1FegrZjPbq3.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe name="oauth2relay607578341" id="oauth2relay607578341" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="google_osd_static_frame_6707844061183" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./How to Install Jenkins Automation Server with Apache on Ubuntu 16.04_files/saved_resource(5).html"></iframe></body></html>
