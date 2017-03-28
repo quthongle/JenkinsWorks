@@ -1,0 +1,7 @@
+// Goto this link: https://<jenkins>/script
+// remove this commments
+
+Jenkins.instance.pluginManager.plugins.each{
+  plugin ->
+  println ("${plugin.getDisplayName()} (${plugin.getShortName()}: ${plugin.getVersion()}")
+}
