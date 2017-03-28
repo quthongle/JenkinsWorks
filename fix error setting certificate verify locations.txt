@@ -1,0 +1,38 @@
+#situation
+git clone <path>
+... error setting certificate verify locations
+Cloning into '<...>'...
+fatal: unable to access 'https://github.com/<...>.git/': error setting certificate verify locations:
+  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+                                 
+#fixing
+git config --system http.sslcainfo "<path to local git>/curl-ca-bundle.crt"
+or — not really recommended — you may choose to switch off SSL checks completely by executing:
+
+git config --system http.sslverify false
+For both cases, this will result in changes to [git-install-dir]/etc/gitconfig file, which may be edited directly, too.
+#-----------------------
+When using https you will need to supply password or using a certificate. In your case looks like the certificate is not a valid one.
+
+Try fixing it like this by telling git where to find the certificate:
+
+// Add the certificate to your configuration file
+git config --system http.sslcainfo "C:\Program Files (x86)\git\bin\curl-ca-bundle.crt"
+Alternatively, you could disable SSL checks:
+
+// or switch off SSL checks completely by executing:
+git config --system http.sslverify false
+Set this in your config to disable it only for the given url and not for all requests
+
+[http "https://weak.example.com"]
+    sslVerify = false
+http.sslVerify
+
+Whether to verify the SSL certificate when fetching or pushing over HTTPS.
+http.sslCAInfo
+
+File containing the certificates to verify the peer with when fetching or pushing over HTTPS
+
+#-----------------------
+or just reintall git :)
